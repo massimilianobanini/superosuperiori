@@ -140,7 +140,7 @@ La domanda importante è:
 - [OFFICIAL-VERSION.md](OFFICIAL-VERSION.md) — quale versione è quella ufficiale e come vengono gestite copie e fork.
 - [PRIVACY.md](PRIVACY.md) — come condividere solo i dati necessari, soprattutto per studenti minorenni.
 - [PLATFORM-SUPPORT.md](PLATFORM-SUPPORT.md) — quali piattaforme sono state davvero verificate.
-- [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — limiti già conosciuti della V0.1.
+- [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — limiti già conosciuti della V0.2.
 - [testing/STRESS-TEST-V0.1.md](testing/STRESS-TEST-V0.1.md) — risultati dello stress test completo della V0.1.
 - [GEMINI-START.md](GEMINI-START.md) — fallback autosufficiente dedicato a Gemini.
 
@@ -155,21 +155,20 @@ https://docs.google.com/forms/d/e/1FAIpQLScWKUSC3GKNlJrgMLuUZ85kZvhB8NRJFxTrABMt
 
 ## Se usi Gemini
 
-Nella V0.2 il link principale del repository non è ancora il percorso affidabile per Gemini.
+I test V0.1/V0.2 hanno mostrato che Gemini **non esegue in modo affidabile SuperoSuperiori partendo soltanto da un normale link web o dal repository**.
 
-Usa invece il fallback autosufficiente:
+Il percorso validato è la Skill Gemini `/superosuperiori`.
 
-https://raw.githubusercontent.com/massimilianobanini/superosuperiori/main/GEMINI-START.md
+La versione canonica della Skill è in [gemini/SKILL.md](gemini/SKILL.md).
 
-Questo file contiene già le regole essenziali e non richiede a Gemini di esplorare il repository.
+`GEMINI-START.md` resta come fallback tecnico e riferimento, ma non è il percorso consigliato per gli studenti.
 
+## Pagina pubblica del progetto
 
-## Link da dare agli studenti
-
-L'ingresso universale consigliato è:
+La pagina pubblica è:
 
 https://massimilianobanini.github.io/superosuperiori/
 
-È pensato per essere letto direttamente da ChatGPT, Gemini e altre AI senza richiedere allo studente di conoscere la struttura del repository.
+Serve come vetrina e punto di riferimento del progetto. **Non va considerata un avvio automatico affidabile per tutte le AI.**
 
 Lingua predefinita: **italiano**. Contesto predefinito: **scuole superiori italiane**.
