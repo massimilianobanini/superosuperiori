@@ -57,7 +57,7 @@ Restano soprattutto tre limiti:
 | PDF ↔ Markdown sincronizzati | FAIL / backlog | Il Markdown è adattato per AI; non esiste ancora generazione automatica del PDF. |
 | QR del PDF verso GitHub | FAIL / backlog | Il PDF V1.7 punta ancora al collegamento pubblico precedente. |
 | ChatGPT | SPERIMENTALE | Test 1 riuscito; Test 2 ha mostrato variabilità prima delle ultime correzioni. |
-| Gemini | DA VALIDARE | Nessun test runtime pulito registrato. |
+| Gemini | FAIL runtime | Test 1: repository visto erroneamente come vuoto/senza README. Test 2: SuperoSuperiori non caricato; risposta generica non conforme al metodo. |
 | Altre AI | DA VALIDARE | Nessun supporto dichiarato. |
 
 ---
@@ -171,6 +171,16 @@ Il posizionamento ufficiale è:
 
 Lo stress test non considera dimostrata la priorità storica della parola "primo". Esistono già in Italia corsi e contenuti che combinano metodo di studio, studenti e AI. Il claim resta il posizionamento scelto del progetto, ma una verifica di anteriorità/competitor è un lavoro separato.
 
+### F. Gemini non recupera correttamente il repository
+
+Nel test runtime del 3 ottobre 2026 Gemini ha visto il repository come vuoto/privo di README, nonostante il contenuto reale fosse presente e pubblico.
+
+Questo indica un problema di recupero/cache/indicizzazione lato piattaforma e non un repository realmente vuoto.
+
+Nel test "link + problema" Gemini ha quindi risposto come tutor generico, senza applicare SuperoSuperiori.
+
+Finché il comportamento non cambia o non esiste un fallback dedicato, Gemini non è supportato via solo link.
+
 ### E. PDF
 
 Il prossimo PDF dovrebbe:
@@ -201,7 +211,7 @@ Non ancora adatta a dichiarazioni del tipo:
 Passare a V0.2 quando almeno:
 
 1. il Test 1 e il Test 2 sono ripetibili su ChatGPT;
-2. Test 1 e Test 2 sono provati su Gemini;
+2. esiste un percorso Gemini che supera Test 1 e Test 2, oppure Gemini viene esplicitamente escluso dal supporto V0.2;
 3. almeno alcuni studenti reali completano sessioni di studio;
 4. i problemi ricorrenti vengono classificati;
 5. PDF e fonte canonica vengono riallineati.
