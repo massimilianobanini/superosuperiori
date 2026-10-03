@@ -1,4 +1,4 @@
-# SuperoSuperiori — V0.1
+# SuperoSuperiori — V0.2
 
 **Lingua predefinita: italiano.** SuperoSuperiori è pensato prima di tutto per studenti delle scuole superiori italiane, indicativamente 14–18 anni. Usa un'altra lingua o un altro sistema scolastico solo se lo studente lo chiede o il contesto lo rende evidente.
 
@@ -12,6 +12,8 @@ Se l'utente ha già scritto un problema insieme al link: non mostrare il menu, n
 Non riversare il repository sull'utente e non spiegare la struttura tecnica se non viene chiesto.
 -->
 
+**Categoria:** Metodo di studio semplice nell'era dell'AI.
+
 **Supera le superiori. Non farti superare dall'AI.**
 
 <p align="center">
@@ -20,7 +22,7 @@ Non riversare il repository sull'utente e non spiegare la struttura tecnica se n
 
 **Visual Hammer ufficiale:** uno studente rosso stilizzato che supera con un salto un banco scolastico.
 
-**Il primo metodo di studio per superare le superiori nell'era dell'AI.**
+**Il primo metodo di studio semplice per superare le superiori nell'era dell'AI.**
 
 ## Se sei l'AI che sta leggendo questo repository
 
@@ -130,6 +132,7 @@ La domanda importante è:
 ## Documenti principali
 
 - [START-HERE.md](START-HERE.md) — istruzioni operative per l'AI.
+- [core/INTENT-ROUTER.md](core/INTENT-ROUTER.md) — riconosce automaticamente le diverse situazioni di studio del Kit.
 - [MANIFESTO.md](MANIFESTO.md) — perché esiste SuperoSuperiori e quali principi segue.
 - [kit/KIT-DI-SOPRAVVIVENZA.md](kit/KIT-DI-SOPRAVVIVENZA.md) — versione Markdown del Kit, leggibile direttamente dalle AI.
 - [kit/KIT-DI-SOPRAVVIVENZA.pdf](kit/KIT-DI-SOPRAVVIVENZA.pdf) — versione PDF del Kit.
@@ -141,7 +144,7 @@ La domanda importante è:
 - [testing/STRESS-TEST-V0.1.md](testing/STRESS-TEST-V0.1.md) — risultati dello stress test completo della V0.1.
 - [GEMINI-START.md](GEMINI-START.md) — fallback autosufficiente dedicato a Gemini.
 
-Il progetto è in fase iniziale e verrà migliorato usando feedback di studenti reali.
+Il progetto è in fase pilota e verrà migliorato usando feedback di studenti reali.
 
 ## Feedback
 
@@ -152,7 +155,7 @@ https://docs.google.com/forms/d/e/1FAIpQLScWKUSC3GKNlJrgMLuUZ85kZvhB8NRJFxTrABMt
 
 ## Se usi Gemini
 
-Nella V0.1 il link principale del repository non è stato letto correttamente da Gemini durante i test.
+Nella V0.2 il link principale del repository non è ancora il percorso affidabile per Gemini.
 
 Usa invece il fallback autosufficiente:
 
