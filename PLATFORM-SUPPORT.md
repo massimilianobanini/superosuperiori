@@ -88,14 +88,20 @@ Questo fallback non richiede a Gemini di esplorare il repository o seguire altri
 Stato: **da validare runtime**.
 
 
-## Ingresso universale consigliato
+## Pagina GitHub Pages
 
-Per gli studenti, l'ingresso consigliato non deve essere un URL `raw.githubusercontent.com`.
-
-È stata preparata una pagina GitHub Pages autosufficiente:
+È disponibile:
 
 https://massimilianobanini.github.io/superosuperiori/
 
-La pagina contiene già le istruzioni essenziali per qualunque AI e usa l'italiano come lingua predefinita.
+Nel test runtime con Gemini del 3 ottobre 2026, Gemini ha letto correttamente il contenuto della pagina ma lo ha **riassunto in inglese invece di eseguire le istruzioni**.
 
-Il file `GEMINI-START.md` resta disponibile come fallback tecnico, ma non è il link pensato per gli studenti.
+Conclusione: una normale pagina web, anche autosufficiente, non è un bootstrap affidabile per Gemini.
+
+La pagina può restare utile come ingresso umano/landing page, ma **non va considerata un avvio automatico dell'AI**.
+
+## Fallback Gemini consigliato
+
+Per Gemini il percorso affidabile da validare è un **Gem personalizzato di SuperoSuperiori**, con le regole inserite nelle istruzioni del Gem e condiviso tramite link.
+
+Il file `GEMINI-START.md` resta la base canonica delle istruzioni da inserire nel Gem.
