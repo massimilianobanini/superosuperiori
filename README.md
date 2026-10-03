@@ -128,6 +128,7 @@ La domanda importante è:
 - [PRIVACY.md](PRIVACY.md) — come condividere solo i dati necessari, soprattutto per studenti minorenni.
 - [PLATFORM-SUPPORT.md](PLATFORM-SUPPORT.md) — quali piattaforme sono state davvero verificate.
 - [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — limiti già conosciuti della V0.1.
+- [testing/STRESS-TEST-V0.1.md](testing/STRESS-TEST-V0.1.md) — risultati dello stress test completo della V0.1.
 
 Il progetto è in fase iniziale e verrà migliorato usando feedback di studenti reali.
 
