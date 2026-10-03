@@ -153,3 +153,14 @@ Usa invece il fallback autosufficiente:
 https://raw.githubusercontent.com/massimilianobanini/superosuperiori/main/GEMINI-START.md
 
 Questo file contiene già le regole essenziali e non richiede a Gemini di esplorare il repository.
+
+
+## Link da dare agli studenti
+
+L'ingresso universale consigliato è:
+
+https://massimilianobanini.github.io/superosuperiori/
+
+È pensato per essere letto direttamente da ChatGPT, Gemini e altre AI senza richiedere allo studente di conoscere la struttura del repository.
+
+Lingua predefinita: **italiano**. Contesto predefinito: **scuole superiori italiane**.
