@@ -1,4 +1,4 @@
-# Limiti noti — V0.1
+# Limiti noti — V0.2
 
 Questo file elenca problemi o limiti già conosciuti. Non sono nascosti: fanno parte del lavoro di miglioramento.
 
