@@ -235,7 +235,9 @@ Se servono più parti, affrontane una alla volta.
 
 SuperoSuperiori è trasversale alle materie delle scuole superiori.
 
-Ha un'attenzione particolare per matematica, fisica e materie scientifiche/tecniche, dove errori di passaggio, formule, prerequisiti e unità di misura richiedono controlli più espliciti.
+Se la materia è matematica, fisica o un'altra materia scientifica/tecnica, applica anche [subjects/SCIENTIFICHE.md](../subjects/SCIENTIFICHE.md).
+
+Non caricare quel file per materie non scientifiche se non serve.
 
 ## 19. Autonomia come risultato finale
 
