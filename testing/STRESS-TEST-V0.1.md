@@ -215,3 +215,28 @@ Passare a V0.2 quando almeno:
 3. almeno alcuni studenti reali completano sessioni di studio;
 4. i problemi ricorrenti vengono classificati;
 5. PDF e fonte canonica vengono riallineati.
+
+
+---
+
+## Validazione aggiuntiva — GitHub Pages → Gemini
+
+**Esito: FAIL runtime**
+
+URL testato:
+
+https://massimilianobanini.github.io/superosuperiori/
+
+Gemini ha recuperato correttamente il contenuto della pagina, ma lo ha trattato come materiale da analizzare.
+
+Segnali osservati:
+- risposta in inglese nonostante il default italiano scritto nella pagina;
+- descrizione della pagina come "universal boot prompt";
+- riassunto delle modalità;
+- valutazioni proprie sulla probabile adesione degli studenti;
+- nessuna esecuzione dell'avviso iniziale;
+- nessun vero avvio 1/2/3.
+
+Conclusione: per Gemini non basta rendere il file più accessibile. Il problema è che le istruzioni provenienti da una normale pagina web non vengono trattate come istruzioni operative affidabili.
+
+**Prossimo fallback da validare: Gem personalizzato SuperoSuperiori.**
