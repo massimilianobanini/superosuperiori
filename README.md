@@ -87,6 +87,9 @@ La domanda importante è:
 - [START-HERE.md](START-HERE.md) — istruzioni operative per l'AI.
 - [MANIFESTO.md](MANIFESTO.md) — perché esiste SuperoSuperiori e quali principi segue.
 - [kit/KIT-DI-SOPRAVVIVENZA.md](kit/KIT-DI-SOPRAVVIVENZA.md) — versione Markdown del Kit, leggibile direttamente dalle AI.
+- [kit/KIT-DI-SOPRAVVIVENZA.pdf](kit/KIT-DI-SOPRAVVIVENZA.pdf) — versione PDF del Kit.
+- [LICENSE.md](LICENSE.md) — licenza del progetto.
+- [OFFICIAL-VERSION.md](OFFICIAL-VERSION.md) — quale versione è quella ufficiale e come vengono gestite copie e fork.
 
 Il progetto è in fase iniziale e verrà migliorato usando feedback di studenti reali.
 
