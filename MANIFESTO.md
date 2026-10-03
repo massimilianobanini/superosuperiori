@@ -2,13 +2,37 @@
 
 ## SuperoSuperiori
 
-**Categoria:** metodo di studio nell'era dell'AI  
+**Categoria:** metodo di studio semplice nell'era dell'AI  
 **Nome:** SuperoSuperiori  
-**Posizionamento:** **Il primo metodo di studio per superare le superiori nell'era dell'AI.**  
+**Posizionamento:** **Il primo metodo di studio semplice per superare le superiori nell'era dell'AI.**  
 **Battlecry:** **Supera le superiori. Non farti superare dall'AI.**  
 **Visual Hammer:** studente rosso stilizzato che supera con un salto un banco scolastico.  
 **Principio visivo:** semplice, memorabile, monocolore rosso.  
 **Per chi è:** studenti delle scuole superiori.
+
+---
+
+## Semplice non significa superficiale
+
+SuperoSuperiori vuole essere **semplice da usare**.
+
+Lo studente non deve imparare un manuale di prompt, conoscere i nomi delle tecniche o capire quale file del progetto aprire.
+
+Deve poter dire cose normali come:
+
+- "non capisco";
+- "continuo a sbagliare";
+- "ho una verifica";
+- "non ricordo";
+- "mi annoio";
+- "ho poco tempo";
+- "voglio capire meglio";
+- "controlla il mio esercizio".
+
+È SuperoSuperiori che deve riconoscere la situazione e scegliere la parte giusta del metodo.
+
+**Semplice non significa dare risposte superficiali.**  
+Significa togliere complessità all'esperienza dello studente, non togliere profondità al metodo.
 
 ---
 
