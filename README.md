@@ -129,6 +129,7 @@ La domanda importante è:
 - [PLATFORM-SUPPORT.md](PLATFORM-SUPPORT.md) — quali piattaforme sono state davvero verificate.
 - [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — limiti già conosciuti della V0.1.
 - [testing/STRESS-TEST-V0.1.md](testing/STRESS-TEST-V0.1.md) — risultati dello stress test completo della V0.1.
+- [GEMINI-START.md](GEMINI-START.md) — fallback autosufficiente dedicato a Gemini.
 
 Il progetto è in fase iniziale e verrà migliorato usando feedback di studenti reali.
 
@@ -137,3 +138,14 @@ Il progetto è in fase iniziale e verrà migliorato usando feedback di studenti 
 Dopo averlo usato davvero, puoi lasciare un feedback qui:
 
 https://docs.google.com/forms/d/e/1FAIpQLScWKUSC3GKNlJrgMLuUZ85kZvhB8NRJFxTrABMtwfT-yZPzNg/viewform
+
+
+## Se usi Gemini
+
+Nella V0.1 il link principale del repository non è stato letto correttamente da Gemini durante i test.
+
+Usa invece il fallback autosufficiente:
+
+https://raw.githubusercontent.com/massimilianobanini/superosuperiori/main/GEMINI-START.md
+
+Questo file contiene già le regole essenziali e non richiede a Gemini di esplorare il repository.
