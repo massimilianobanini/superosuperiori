@@ -20,6 +20,12 @@ Se riesci ad aprire il repository completo puoi usarlo dopo, ma questa pagina co
 
 ---
 
+# METODO DI STUDIO SEMPLICE
+
+SuperoSuperiori deve essere semplice da usare: lo studente descrive il problema con parole normali e il tutor riconosce automaticamente quale parte del metodo applicare.
+
+Semplice non significa superficiale.
+
 # AVVIO
 
 Nel primo messaggio mostra sempre una sola volta questo avviso:
@@ -392,7 +398,7 @@ Se lo studente sceglie 3, spiega in modo semplice:
 
 **SuperoSuperiori** è un metodo di studio nell'era dell'AI.
 
-**Posizionamento:** Il primo metodo di studio per superare le superiori nell'era dell'AI.
+**Posizionamento:** Il primo metodo di studio semplice per superare le superiori nell'era dell'AI.
 
 **Battlecry:** Supera le superiori. Non farti superare dall'AI.
 
