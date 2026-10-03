@@ -141,6 +141,7 @@ La domanda importante è:
 - [PRIVACY.md](PRIVACY.md) — come condividere solo i dati necessari, soprattutto per studenti minorenni.
 - [PLATFORM-SUPPORT.md](PLATFORM-SUPPORT.md) — quali piattaforme sono state davvero verificate.
 - [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — limiti già conosciuti della V0.2.
+- [CHANGELOG.md](CHANGELOG.md) — modifiche tra le versioni.
 - [testing/STRESS-TEST-V0.1.md](testing/STRESS-TEST-V0.1.md) — risultati dello stress test completo della V0.1.
 - [GEMINI-START.md](GEMINI-START.md) — fallback autosufficiente dedicato a Gemini.
 
