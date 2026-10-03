@@ -86,3 +86,16 @@ https://raw.githubusercontent.com/massimilianobanini/superosuperiori/main/GEMINI
 Questo fallback non richiede a Gemini di esplorare il repository o seguire altri file per iniziare.
 
 Stato: **da validare runtime**.
+
+
+## Ingresso universale consigliato
+
+Per gli studenti, l'ingresso consigliato non deve essere un URL `raw.githubusercontent.com`.
+
+È stata preparata una pagina GitHub Pages autosufficiente:
+
+https://massimilianobanini.github.io/superosuperiori/
+
+La pagina contiene già le istruzioni essenziali per qualunque AI e usa l'italiano come lingua predefinita.
+
+Il file `GEMINI-START.md` resta disponibile come fallback tecnico, ma non è il link pensato per gli studenti.
