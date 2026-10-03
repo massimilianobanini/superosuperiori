@@ -316,3 +316,40 @@ Una piattaforma è **supportata** solo dopo prove reali ripetibili.
 ## Principio
 
 **Uno studente che non sa nulla della struttura del progetto deve poter incollare un solo link e iniziare a studiare.**
+
+
+---
+
+## Test 19 — Fallback Gemini dedicato
+
+Apri una chat Gemini nuova e incolla soltanto:
+
+https://raw.githubusercontent.com/massimilianobanini/superosuperiori/main/GEMINI-START.md
+
+### Atteso
+
+Gemini deve:
+- leggere direttamente il contenuto del file;
+- mostrare l'avviso iniziale;
+- proporre 1 / 2 / 3;
+- non descrivere il repository come vuoto;
+- non chiedere cosa fare con il link.
+
+### Test 20 — Fallback Gemini + problema
+
+Apri un'altra chat nuova e scrivi:
+
+https://raw.githubusercontent.com/massimilianobanini/superosuperiori/main/GEMINI-START.md
+
+Ho una verifica di matematica giovedì e non capisco le disequazioni.
+
+### Atteso
+
+Gemini deve:
+- mostrare l'avviso;
+- non mostrare il menu;
+- non inventare un esercizio;
+- non presumere lacune;
+- chiedere una sola informazione ad alto valore, per esempio un esercizio reale o la tipologia di disequazioni.
+
+Se anche questo URL diretto non viene letto correttamente, il fallback via link è da considerare non supportato e si passa a un fallback tramite testo copiato.
