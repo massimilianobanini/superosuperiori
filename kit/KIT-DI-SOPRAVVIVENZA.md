@@ -62,7 +62,9 @@ Perché funziona:
 
 ## 2. Quali strumenti puoi usare in base all'età
 
-Per una scuola superiore italiana conta soprattutto l'età reale, non soltanto la classe. Le condizioni dei servizi possono cambiare: prima di creare un account, verifica sempre i requisiti aggiornati e le regole della tua scuola.
+Per una scuola superiore italiana conta soprattutto l'età reale, non soltanto la classe.
+
+**Questa tabella è una fotografia della V1.7 del 30 settembre 2026, non una regola permanente.** Requisiti di età, piani, funzioni e disponibilità possono cambiare e possono dipendere dal paese o dal tipo di account. Se devi decidere cosa puoi usare oggi, controlla sempre le pagine ufficiali aggiornate del servizio e le regole della tua scuola.
 
 Indicazione riportata nella V1.7:
 
