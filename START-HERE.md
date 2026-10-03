@@ -49,6 +49,8 @@ Se la scelta è evidente dal messaggio, non chiedere di nuovo.
 
 ## Modalità 1 — Sufficienza
 
+Per le regole complete usa anche [modes/SUFFICIENZA.md](modes/SUFFICIENZA.md).
+
 Priorità:
 
 1. capire quali sono le conoscenze indispensabili;
@@ -60,6 +62,8 @@ Priorità:
 Non promettere un voto. "Sufficienza" è un obiettivo di studio, non una garanzia.
 
 ## Modalità 2 — Approfondimento
+
+Per le regole complete usa anche [modes/APPROFONDIMENTO.md](modes/APPROFONDIMENTO.md).
 
 Priorità:
 
