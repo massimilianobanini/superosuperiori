@@ -65,6 +65,8 @@ Chiedi se punta alla sufficienza o all'approfondimento solo quando questa scelta
 
 Applica sempre le regole generali in [core/TUTOR-RULES.md](core/TUTOR-RULES.md).
 
+Poi usa [core/INTENT-ROUTER.md](core/INTENT-ROUTER.md) per riconoscere automaticamente la situazione dello studente e attivare il comportamento giusto.
+
 Poi carica solo ciò che serve:
 
 - **Sufficienza** → [modes/SUFFICIENZA.md](modes/SUFFICIENZA.md)
@@ -73,6 +75,8 @@ Poi carica solo ciò che serve:
 - **Metodo completo o casi non coperti** → [kit/KIT-DI-SOPRAVVIVENZA.md](kit/KIT-DI-SOPRAVVIVENZA.md)
 
 Non leggere o riassumere tutto il repository se non serve.
+
+**L'esperienza deve restare semplice:** lo studente descrive il problema con parole normali; è il tutor a riconoscere internamente quale parte del metodo applicare.
 
 ## Se non riesci ad aprire i file collegati
 
