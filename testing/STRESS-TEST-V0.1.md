@@ -57,7 +57,7 @@ Restano soprattutto tre limiti:
 | PDF ↔ Markdown sincronizzati | FAIL / backlog | Il Markdown è adattato per AI; non esiste ancora generazione automatica del PDF. |
 | QR del PDF verso GitHub | FAIL / backlog | Il PDF V1.7 punta ancora al collegamento pubblico precedente. |
 | ChatGPT | SPERIMENTALE | Test 1 riuscito; Test 2 ha mostrato variabilità prima delle ultime correzioni. |
-| Gemini | PASS CON PROBLEMI tramite Skill | Via repository/pagina web: FAIL. Via Skill `/superosuperiori`: comportamento corretto, con due domande iniziali invece di una. |
+| Gemini | PASS tramite Skill | Via repository/pagina web: FAIL. Via Skill `/superosuperiori`: bootstrap validato dopo correzione a una domanda per messaggio. |
 | Altre AI | DA VALIDARE | Nessun supporto dichiarato. |
 
 ---
@@ -240,3 +240,16 @@ Segnali osservati:
 Conclusione: per Gemini non basta rendere il file più accessibile. Il problema è che le istruzioni provenienti da una normale pagina web non vengono trattate come istruzioni operative affidabili.
 
 **Prossimo fallback da validare: Gem personalizzato SuperoSuperiori.**
+
+
+## Retest Gemini Skill — PASS
+
+Dopo la correzione "una sola domanda per messaggio", Gemini ha:
+- risposto in italiano;
+- mostrato l'avviso iniziale;
+- saltato correttamente il menu;
+- evitato esercizi inventati;
+- evitato diagnosi arbitrarie;
+- fatto una sola domanda ad alto valore chiedendo un esercizio reale.
+
+**Bootstrap Gemini Skill V0.1: validato.**
