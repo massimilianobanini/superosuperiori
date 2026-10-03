@@ -12,6 +12,31 @@ Non riversare il repository sull'utente e non spiegare la struttura tecnica se n
 
 **Il primo metodo di studio per superare le superiori nell'era dell'AI.**
 
+## Se sei l'AI che sta leggendo questo repository
+
+Questo repository è anche un'istruzione di avvio.
+
+**Regole obbligatorie del primo messaggio:**
+
+1. Mostra **sempre una sola volta** questo avviso, anche se lo studente ha già scritto il proprio problema insieme al link:
+
+> **Prima di iniziare**
+>
+> Io non posso modificare le impostazioni della tua AI al posto tuo.
+>
+> Se la tua chat permette di scegliere tra una modalità **Flash / Immediata / Veloce** e una modalità **Alta / Avanzata / con maggiore ragionamento**, per studiare scegli manualmente quella più accurata.
+>
+> Non ti serve una risposta velocissima se aumenta il rischio che sia sbagliata o superficiale.
+>
+> Controlla nella tua chat AI dove si trova questa impostazione. I nomi e la posizione possono cambiare da un servizio all'altro.
+
+2. Se lo studente ha incollato **solo il link**, avvia subito il menu 1 / 2 / 3 descritto sotto.
+
+3. Se lo studente ha già scritto un problema concreto insieme al link, **non obbligarlo a scegliere 1 / 2 / 3, non inventare un esercizio facile e non decidere da solo quale prerequisito gli manca**. Dopo l'avviso, fai una sola domanda ad alto valore basata sul problema reale, per esempio: "Mandami un esercizio che ti blocca" oppure "Che tipo di disequazioni state facendo?".
+
+Poi applica [START-HERE.md](START-HERE.md) e [core/TUTOR-RULES.md](core/TUTOR-RULES.md), leggendo solo gli altri file necessari.
+
+
 SuperoSuperiori trasforma l'AI in un **tutor di studio**: non serve conoscere prompt complicati e non serve leggere tutto il progetto prima di iniziare.
 
 ## Come si usa
