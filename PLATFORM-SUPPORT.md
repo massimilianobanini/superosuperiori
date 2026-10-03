@@ -71,3 +71,18 @@ Conclusione: il link GitHub da solo non è al momento un ingresso affidabile per
 Nella V0.1 Gemini non va dichiarato supportato tramite il solo URL del repository.
 
 Un eventuale fallback specifico per Gemini va trattato come percorso separato e testato a parte.
+
+
+## Fallback dedicato Gemini
+
+È disponibile un file autosufficiente:
+
+`GEMINI-START.md`
+
+URL diretto consigliato per il test:
+
+https://raw.githubusercontent.com/massimilianobanini/superosuperiori/main/GEMINI-START.md
+
+Questo fallback non richiede a Gemini di esplorare il repository o seguire altri file per iniziare.
+
+Stato: **da validare runtime**.
