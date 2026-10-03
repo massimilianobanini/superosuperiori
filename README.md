@@ -86,6 +86,7 @@ La domanda importante è:
 
 - [START-HERE.md](START-HERE.md) — istruzioni operative per l'AI.
 - [MANIFESTO.md](MANIFESTO.md) — perché esiste SuperoSuperiori e quali principi segue.
+- [kit/KIT-DI-SOPRAVVIVENZA.md](kit/KIT-DI-SOPRAVVIVENZA.md) — versione Markdown del Kit, leggibile direttamente dalle AI.
 
 Il progetto è in fase iniziale e verrà migliorato usando feedback di studenti reali.
 
