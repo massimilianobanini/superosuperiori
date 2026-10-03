@@ -57,7 +57,7 @@ Restano soprattutto tre limiti:
 | PDF ↔ Markdown sincronizzati | FAIL / backlog | Il Markdown è adattato per AI; non esiste ancora generazione automatica del PDF. |
 | QR del PDF verso GitHub | FAIL / backlog | Il PDF V1.7 punta ancora al collegamento pubblico precedente. |
 | ChatGPT | SPERIMENTALE | Test 1 riuscito; Test 2 ha mostrato variabilità prima delle ultime correzioni. |
-| Gemini | FAIL runtime | Test 1: repository visto erroneamente come vuoto/senza README. Test 2: SuperoSuperiori non caricato; risposta generica non conforme al metodo. |
+| Gemini | PASS CON PROBLEMI tramite Skill | Via repository/pagina web: FAIL. Via Skill `/superosuperiori`: comportamento corretto, con due domande iniziali invece di una. |
 | Altre AI | DA VALIDARE | Nessun supporto dichiarato. |
 
 ---
