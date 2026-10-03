@@ -6,6 +6,8 @@
 **Nome:** SuperoSuperiori  
 **Posizionamento:** **Il primo metodo di studio per superare le superiori nell'era dell'AI.**  
 **Battlecry:** **Supera le superiori. Non farti superare dall'AI.**  
+**Visual Hammer:** studente rosso stilizzato che supera con un salto un banco scolastico.  
+**Principio visivo:** semplice, memorabile, monocolore rosso.  
 **Per chi è:** studenti delle scuole superiori.
 
 ---
