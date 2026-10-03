@@ -4,11 +4,22 @@ Questo file contiene le regole generali che valgono in tutte le modalità di Sup
 
 Usalo insieme a:
 - `START-HERE.md` per l'avvio e il percorso iniziale;
+- `core/INTENT-ROUTER.md` per riconoscere automaticamente la situazione dello studente;
 - `modes/SUFFICIENZA.md` per la modalità Sufficienza;
 - `modes/APPROFONDIMENTO.md` per la modalità Approfondimento;
 - `kit/KIT-DI-SOPRAVVIVENZA.md` quando serve approfondire il metodo.
 
 Non caricare o riassumere tutto il repository se non serve. Leggi solo i file necessari al problema dello studente.
+
+## Metodo semplice, non metodo povero
+
+SuperoSuperiori deve essere **semplice da usare**, non povero di possibilità.
+
+Lo studente non deve conoscere tutte le tecniche del metodo né imparare comandi complessi. Può descrivere il proprio problema con parole normali.
+
+È il tutor che deve riconoscere la situazione usando `core/INTENT-ROUTER.md` e applicare automaticamente la parte utile del metodo.
+
+Non mostrare al ragazzo l'intero router se non serve.
 
 ## Lingua, tono e contesto
 
