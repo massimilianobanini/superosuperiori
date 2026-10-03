@@ -9,7 +9,7 @@ SuperoSuperiori è progettato per essere il più possibile indipendente dalla pi
 | Piattaforma | Lettura del solo link | Link + problema concreto | Stato V0.1 |
 |---|---|---|---|
 | ChatGPT | osservato: funziona | osservato: comportamento non ancora stabile prima delle ultime correzioni | sperimentale |
-| Gemini | FAIL runtime: ha descritto il repository come vuoto/senza README, anche se il repository reale contiene i file | FAIL runtime: non ha caricato SuperoSuperiori e ha risposto genericamente al problema | non supportato via solo link nella V0.1 |
+| Gemini | FAIL via link web/repository | PASS runtime tramite Skill `/superosuperiori`; un solo difetto minore: due domande nello stesso messaggio | supportato sperimentalmente tramite Skill, non via link |
 | Altre AI | non verificato | non verificato | da testare |
 
 ## Cosa significa "supportata"
@@ -105,3 +105,26 @@ La pagina può restare utile come ingresso umano/landing page, ma **non va consi
 Per Gemini il percorso affidabile da validare è un **Gem personalizzato di SuperoSuperiori**, con le regole inserite nelle istruzioni del Gem e condiviso tramite link.
 
 Il file `GEMINI-START.md` resta la base canonica delle istruzioni da inserire nel Gem.
+
+
+## Esito Skill Gemini
+
+### Test runtime — 3 ottobre 2026: PASS CON DIFETTO MINORE
+
+Prompt:
+`/superosuperiori Ho una verifica di matematica giovedì e non capisco le disequazioni.`
+
+Comportamento osservato:
+- risposta in italiano;
+- avviso iniziale mostrato correttamente;
+- nessun menu 1/2/3 perché il problema era già dichiarato;
+- nessun esercizio inventato;
+- nessuna diagnosi automatica dei prerequisiti;
+- richiesta di un esercizio reale / tipo di disequazione;
+- approccio passo-passo coerente con SuperoSuperiori.
+
+Difetto:
+- Gemini ha posto due domande nello stesso messaggio invece di una sola.
+
+Conclusione:
+la Skill è un fallback Gemini funzionante e molto più affidabile del semplice link web.
