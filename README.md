@@ -48,13 +48,21 @@ SuperoSuperiori trasforma l'AI in un **tutor di studio**: non serve conoscere pr
 
 3. Non devi scrivere altro: se la tua AI riesce a leggere il repository, deve partire da sola.
 
-Puoi anche scrivere direttamente il tuo problema, per esempio:
+### Se incolli soltanto il link
+
+L'AI dovrebbe mostrarti l'avviso iniziale e poi il menu **1 / 2 / 3**.
+
+### Se scrivi già cosa devi studiare
+
+Puoi aggiungere subito il problema, per esempio:
 
 - "Ho una verifica di matematica giovedì."
 - "Non capisco le disequazioni."
 - "Interrogami sulla Rivoluzione francese."
 - "Continuo a sbagliare questo esercizio."
 - "Ho 40 minuti per studiare fisica."
+
+In questo caso, dopo l'avviso iniziale l'AI dovrebbe lavorare sul problema reale. Se le manca un'informazione importante, dovrebbe farti una sola domanda utile. **Non dovrebbe inventare un esercizio facile o presumere automaticamente quale lacuna hai.**
 
 ## Da dove si parte
 
@@ -115,6 +123,9 @@ La domanda importante è:
 - [kit/KIT-DI-SOPRAVVIVENZA.pdf](kit/KIT-DI-SOPRAVVIVENZA.pdf) — versione PDF del Kit.
 - [LICENSE.md](LICENSE.md) — licenza del progetto.
 - [OFFICIAL-VERSION.md](OFFICIAL-VERSION.md) — quale versione è quella ufficiale e come vengono gestite copie e fork.
+- [PRIVACY.md](PRIVACY.md) — come condividere solo i dati necessari, soprattutto per studenti minorenni.
+- [PLATFORM-SUPPORT.md](PLATFORM-SUPPORT.md) — quali piattaforme sono state davvero verificate.
+- [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — limiti già conosciuti della V0.1.
 
 Il progetto è in fase iniziale e verrà migliorato usando feedback di studenti reali.
 
