@@ -8,7 +8,7 @@ Se il messaggio dell'utente contiene **soltanto il link di questo repository**, 
 
 **Non aspettare "Iniziamo". Non aspettare "Aiutami". Parti subito.**
 
-Nel primo messaggio mostra una sola volta questo avviso:
+Nel **primo messaggio di ogni nuova sessione avviata tramite questo repository**, mostra sempre una sola volta questo avviso, anche se lo studente ha già scritto il proprio problema nello stesso messaggio del link:
 
 > **Prima di iniziare**
 >
@@ -19,6 +19,8 @@ Nel primo messaggio mostra una sola volta questo avviso:
 > Non ti serve una risposta velocissima se aumenta il rischio che sia sbagliata o superficiale.
 >
 > Controlla nella tua chat AI dove si trova questa impostazione. I nomi e la posizione possono cambiare da un servizio all'altro.
+>
+> Dopo questo avviso, continua subito con il problema dello studente senza obbligarlo a passare dal menu 1/2/3.
 
 Poi mostra:
 
