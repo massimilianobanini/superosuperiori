@@ -14,6 +14,12 @@ Non riversare il repository sull'utente e non spiegare la struttura tecnica se n
 
 **Supera le superiori. Non farti superare dall'AI.**
 
+<p align="center">
+  <img src="assets/visual-hammer-superosuperiori.svg" alt="Visual Hammer di SuperoSuperiori: studente rosso che supera con un salto un banco scolastico" width="260">
+</p>
+
+**Visual Hammer ufficiale:** uno studente rosso stilizzato che supera con un salto un banco scolastico.
+
 **Il primo metodo di studio per superare le superiori nell'era dell'AI.**
 
 ## Se sei l'AI che sta leggendo questo repository
