@@ -1,4 +1,4 @@
-# Supporto delle piattaforme — V0.1
+# Supporto delle piattaforme — V0.2
 
 SuperoSuperiori è progettato per essere il più possibile indipendente dalla piattaforma AI.
 
@@ -6,7 +6,7 @@ SuperoSuperiori è progettato per essere il più possibile indipendente dalla pi
 
 ## Stato dei test
 
-| Piattaforma | Lettura del solo link | Link + problema concreto | Stato V0.1 |
+| Piattaforma | Lettura del solo link | Link + problema concreto | Stato V0.2 |
 |---|---|---|---|
 | ChatGPT | osservato: funziona | osservato: comportamento non ancora stabile prima delle ultime correzioni | sperimentale |
 | Gemini | FAIL via link web/repository | PASS runtime tramite Skill `/superosuperiori`; una domanda per messaggio dopo correzione | bootstrap Skill validato sperimentalmente |
@@ -68,7 +68,7 @@ Conclusione: il link GitHub da solo non è al momento un ingresso affidabile per
 
 ### Conseguenza
 
-Nella V0.1 Gemini non va dichiarato supportato tramite il solo URL del repository.
+Nella V0.2 Gemini non va dichiarato supportato tramite il solo URL del repository.
 
 Un eventuale fallback specifico per Gemini va trattato come percorso separato e testato a parte.
 
@@ -144,4 +144,4 @@ Risultato osservato:
 - una sola domanda ad alto valore;
 - richiesta di un esercizio reale.
 
-Conclusione: il bootstrap Gemini tramite Skill è validato per la V0.1.
+Conclusione: il bootstrap Gemini tramite Skill è validato per la V0.2.
