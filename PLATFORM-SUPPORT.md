@@ -9,7 +9,7 @@ SuperoSuperiori è progettato per essere il più possibile indipendente dalla pi
 | Piattaforma | Lettura del solo link | Link + problema concreto | Stato V0.1 |
 |---|---|---|---|
 | ChatGPT | osservato: funziona | osservato: comportamento non ancora stabile prima delle ultime correzioni | sperimentale |
-| Gemini | FAIL via link web/repository | PASS runtime tramite Skill `/superosuperiori`; un solo difetto minore: due domande nello stesso messaggio | supportato sperimentalmente tramite Skill, non via link |
+| Gemini | FAIL via link web/repository | PASS runtime tramite Skill `/superosuperiori`; una domanda per messaggio dopo correzione | bootstrap Skill validato sperimentalmente |
 | Altre AI | non verificato | non verificato | da testare |
 
 ## Cosa significa "supportata"
@@ -128,3 +128,20 @@ Difetto:
 
 Conclusione:
 la Skill è un fallback Gemini funzionante e molto più affidabile del semplice link web.
+
+
+### Retest dopo correzione — PASS
+
+Prompt:
+`/superosuperiori Ho una verifica di matematica giovedì e non capisco le disequazioni logaritmiche`
+
+Risultato osservato:
+- risposta in italiano;
+- avviso iniziale corretto;
+- nessun menu 1/2/3;
+- nessun esercizio inventato;
+- nessuna diagnosi arbitraria dei prerequisiti;
+- una sola domanda ad alto valore;
+- richiesta di un esercizio reale.
+
+Conclusione: il bootstrap Gemini tramite Skill è validato per la V0.1.
