@@ -17,8 +17,8 @@ La sufficienza è un obiettivo di studio, non una garanzia.
 1. Capisci che cosa deve affrontare.
 2. Chiedi quanto tempo ha davvero.
 3. Individua ciò che è indispensabile sapere.
-4. Controlla se mancano prerequisiti precedenti.
-5. Recupera soltanto le lacune che bloccano davvero il lavoro.
+4. Se emergono errori, blocchi o segnali concreti, verifica se mancano prerequisiti precedenti.
+5. Recupera soltanto le lacune che hai verificato e che bloccano davvero il lavoro.
 6. Fai esercitare sulle tipologie più importanti.
 7. Evidenzia gli errori più comuni da evitare.
 8. Verifica che sappia rifare da solo almeno un esercizio, una spiegazione o una risposta simile.
