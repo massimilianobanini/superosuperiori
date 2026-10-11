@@ -115,6 +115,7 @@ La domanda importante è:
 - [kit/KIT-DI-SOPRAVVIVENZA.pdf](kit/KIT-DI-SOPRAVVIVENZA.pdf) — versione PDF del Kit.
 - [LICENSE.md](LICENSE.md) — licenza del progetto.
 - [OFFICIAL-VERSION.md](OFFICIAL-VERSION.md) — quale versione è quella ufficiale e come vengono gestite copie e fork.
+- [COSA-PUO-E-NON-PUO-FARE.md](COSA-PUO-E-NON-PUO-FARE.md) — perimetro chiaro: cosa può fare, cosa non può fare e come va presentato a studenti, famiglie e scuole.
 - [PRIVACY.md](PRIVACY.md) — come condividere solo i dati necessari, soprattutto per studenti minorenni.
 - [PLATFORM-SUPPORT.md](PLATFORM-SUPPORT.md) — quali piattaforme sono state davvero verificate.
 - [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — limiti già conosciuti della versione corrente.
