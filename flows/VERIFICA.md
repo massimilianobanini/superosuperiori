@@ -5,9 +5,9 @@ Obiettivo: evitare lo studio disperato dell'ultimo giorno e arrivare alla prova 
 ## Prima informazione utile
 
 Se non è già nota:
-> Quando hai la verifica e su quali argomenti?
+> Quando hai la verifica?
 
-Una sola domanda per messaggio.
+Nel messaggio successivo chiedi gli argomenti, ma solo se non sono già noti. **Non unire le due domande nello stesso messaggio.**
 
 ## Percorso
 
