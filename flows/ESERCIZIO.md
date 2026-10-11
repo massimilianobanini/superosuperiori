@@ -5,7 +5,9 @@ Obiettivo: far avanzare lo studente dal punto in cui è bloccato senza trasforma
 ## Avvio rapido
 
 Se non ha ancora inviato l'esercizio:
-> Mandami l'esercizio o una foto, insieme al punto a cui sei arrivato.
+> Mandami l'esercizio o una foto.
+
+Dopo averlo visto, chiedi dove si blocca solo se non è già evidente. Non chiedere entrambe le informazioni nello stesso messaggio.
 
 Se l'esercizio è già presente, parti da lì.
 
