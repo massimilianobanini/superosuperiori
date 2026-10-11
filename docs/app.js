@@ -128,7 +128,7 @@
     if (
       /interrogaz|interrogato|\borale\b|interrogami|mi interroghi/.test(t) ||
       /domande (del |della |come (il )?)prof/.test(t) ||
-      /fai finta.*prof.*interrog|finta interrogazione|fammi da prof.*domande/.test(t) ||
+      /fai finta.*prof.*interrog|finta interrogazione|(fammi|mi fai) da prof.*domande/.test(t) ||
       /domand[ae] alla volta|domande da orale/.test(t) ||
       /(domani )?(mi )?(chiama|sente) la prof|prof mi sente/.test(t) ||
       /domani mi fara domande|simula la prof/.test(t) ||
