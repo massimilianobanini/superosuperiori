@@ -68,7 +68,7 @@
     if (/\b(sono|sei|essere|mi sento)\s+(davvero\s+)?pront[oa]\b|autovalut|auto-valut|mettimi alla prova|testami/.test(t)) return 7;
     if (/interrogaz|orale\b/.test(t)) return 4;
     if (/verifica|compito in classe|test scolast|prova scritta/.test(t)) return 3;
-    if (/esercizi?|problema\b|sono bloccato|sono bloccata|mi blocco|sblocc/.test(t)) return 2;
+    if (/esercizi?|sono bloccato|sono bloccata|mi blocco|sblocc|problema (matematico|di matematica|di fisica|di geometria|da risolvere)/.test(t)) return 2;
     if (/organizz|piano di studio|programma(re)? lo studio|scadenza|tempo disponibile/.test(t)) return 5;
     if (/ripass|ricord|memori|flashcard/.test(t)) return 6;
     if (/non capisco|non ho capito|spiegami|spiegamelo|capire|non mi è chiaro|non mi e chiaro/.test(t)) return 1;
