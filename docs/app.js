@@ -73,32 +73,28 @@
       .replace(/\s+/g, " ")
       .trim();
 
-    // 7 — Autovalutazione: priorità alta, perché può contenere parole come
-    // "verifica", "domande", "capito" o "test" senza essere un nuovo argomento.
+    // 7 — Autovalutazione / "sono davvero pronto?"
     if (
       /\b(sono|mi sento)\s+(davvero\s+)?pront[oa]\b/.test(t) ||
       /\b(sono|quanto sono|mi sento|vediamo se sono|fammi capire se sono)\s+preparat[oa]\b/.test(t) ||
       /autovalut|auto-valut|mettimi alla prova|\btestami\b/.test(t) ||
       /vedere se (so|ho capito|sono preparat|ricordo tutto)/.test(t) ||
-      /vedere cosa non so|dimmi dove sono debole|dove sono debole/.test(t) ||
-      /posso smettere di studiare|messo bene per domani/.test(t) ||
-      /fammi \d+ domande.*vedere se/.test(t) ||
+      /vedere cosa non so|trova.*cosa non so|dimmi dove sono debole|dove sono debole/.test(t) ||
+      /posso smettere di studiare|messo bene per domani|andare tranquill[oa] domani/.test(t) ||
+      /manca qualcosa.*posso (chiudere|smettere)/.test(t) ||
+      /fammi \d+ domande.*vedere se|fammi domande.*cosa non so/.test(t) ||
       /fai (un )?test.*vedere cosa non so/.test(t) ||
-      /simulazione.*(dove|cosa).*(debole|sbaglio|non so)/.test(t)
+      /simula(mi)? (la )?(prova|verifica|interrogazione).*(valutami|debole|preparat)/.test(t) ||
+      /simulazione.*(dove|cosa).*(debole|sbaglio|non so)/.test(t) ||
+      /buchi.*prima di domani/.test(t)
     ) return 7;
 
-    // 8 — Revisione critica di un'altra AI: va distinta dalla verifica scolastica.
+    // 8 — Revisione critica di un'altra AI.
     if (
-      /(verifica|controlla|ricontrolla|correggi).*(chatgpt|gemini|copilot|altra ai|un['’]?altra ai|risposta (dell['’]?ai|di chatgpt|di gemini|di copilot))/.test(t) ||
-      /quello che ha detto (chatgpt|gemini|copilot|l['’]?ai)/.test(t) ||
-      /(chatgpt|gemini|copilot).*(dice il contrario|ha ragione|sbaglia)/.test(t)
-    ) return 8;
-
-    // 8 — Approfondimento intenzionale: non confonderlo con "non capisco".
-    if (
-      /approfond|piu a fondo|andiamo.*fondo/.test(t) ||
-      /casi piu difficili|fammi vedere le eccezioni|vedere le eccezioni/.test(t) ||
-      /capire perche funziona davvero|perche funziona davvero/.test(t)
+      /(verifica|controlla|ricontrolla|correggi).*(chatgpt|gemini|copilot|claude|altra ai|un['’]?altra ai|risposta (dell['’]?ai|di chatgpt|di gemini|di copilot|di claude))/.test(t) ||
+      /quello che ha detto (chatgpt|gemini|copilot|claude|l['’]?ai)/.test(t) ||
+      /(chatgpt|gemini|copilot|claude).*(dice il contrario|ha ragione|sbaglia)/.test(t) ||
+      /due ai.*(divers|contrar)|ai.*risultati diversi/.test(t)
     ) return 8;
 
     // 2 — Controllo di un proprio esercizio / soluzione.
@@ -106,64 +102,87 @@
       /(verifica|controlla|ricontrolla|correggi).*(esercizio|soluzione|risultato|procedimento|calcolo)/.test(t) ||
       /dove (ho )?sbagliat|dove sbaglio/.test(t) ||
       /(l['’]?ho fatto|ho fatto).*(giusto|bene|corrett)/.test(t) ||
-      /risultato.*(giusto|corretto)|e giusto\??$/.test(t)
+      /procedimento.*corrett|risultato.*(giusto|corretto)|e giusto\??$/.test(t) ||
+      /ho ottenuto.*(torna|giusto|corretto)/.test(t) ||
+      /trova (il )?primo errore/.test(t)
     ) return 2;
 
-    // 6 — Richiamo/memoria quando lo studente chiede esplicitamente di essere
-    // interrogato per ripassare o ricordare, non per simulare un orale.
+    // 6 — Interrogami per ripassare/ricordare, non per simulare un orale.
     if (
       /(interrogami|fammi.*domande).*(ricord|ripass)/.test(t) ||
       /(ricord|ripass).*(interrogami|fammi.*domande)/.test(t)
     ) return 6;
 
-    // 4 — Interrogazione/orale.
+    // 4 — Interrogazione/orale: evento scolastico esplicito prima di "approfondire".
     if (
       /interrogaz|\borale\b|interrogami|mi interroghi/.test(t) ||
-      /domande come (il )?prof|fai finta.*prof.*interrog/.test(t) ||
-      /domand[ae] alla volta/.test(t)
+      /domande (del|della|come (il )?)prof/.test(t) ||
+      /fai finta.*prof.*interrog|finta interrogazione/.test(t) ||
+      /domand[ae] alla volta/.test(t) ||
+      /domani mi chiama la prof|parlare di .* davanti alla prof/.test(t)
     ) return 4;
 
-    // 3 — Verifica/compito scritto.
+    // 3 — Verifica/compito scritto: evento scolastico esplicito.
     if (
       /\bverifica\b|compito in classe|prova scritta|test scolast/.test(t) ||
-      /\b(ho|avro|domani|lunedi|martedi|mercoledi|giovedi|venerdi).{0,25}\btest\b/.test(t) ||
+      /\b(ho|avro|domani|lunedi|martedi|mercoledi|giovedi|venerdi).{0,30}\btest\b/.test(t) ||
       /\btest di [a-z]/.test(t) ||
-      /\bcompito\b.*(mate|matemat|fisic|italian|ingles|storia|scienze|chimic|tedesc|frances)/.test(t) ||
-      /esercitarmi per (il|un) compito/.test(t)
+      /\bcompito\b.*(mate|matemat|fisic|italian|ingles|storia|scienze|chimic|tedesc|frances|domani)/.test(t) ||
+      /(prepar|esercit).*(per )?(il|un) compito/.test(t) ||
+      /(cosa|che cosa).*(uscire|potrebbe uscire).*compito/.test(t) ||
+      /voglio (il|almeno) [0-9]+.*compito/.test(t) ||
+      /(matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese) scritto/.test(t) ||
+      /prova come quella.*prof/.test(t)
     ) return 3;
+
+    // 5 — Organizzazione / tempo limitato: domina su "non capisco" o "esercizi".
+    if (
+      /organizz|piano di studio|programma(re)? lo studio|scadenza|tempo disponibile|incastr/.test(t) ||
+      /ho poco tempo|poco tempo/.test(t) ||
+      /\b(ho|solo|mi restano?|mi mancano?)\s+(\d+|una|un|due|tre|quattro|cinque|sei|sette|otto)\s+(minuti|min|ore|giorni)\b/.test(t) ||
+      /ho \d+ giorni e \d+ (capitoli|argomenti)/.test(t) ||
+      /come divido lo studio|da dove iniziare a studiare tutto|troppe cose da fare|pieno di compiti/.test(t) ||
+      /dare priorita|cosa studio prima|da cosa parto oggi/.test(t) ||
+      /scaletta.*(giorni|settimana)|entro (lunedi|martedi|mercoledi|giovedi|venerdi|sabato|domenica)/.test(t) ||
+      /questa settimana.*(compiti|materie|studiare)/.test(t)
+    ) return 5;
+
+    // 8 — Approfondimento intenzionale, se non c'è una prova scolastica esplicita.
+    if (
+      /approfond|piu a fondo|andiamo.*fondo/.test(t) ||
+      /casi piu difficili|fammi vedere le eccezioni|vedere le eccezioni|casi limite/.test(t) ||
+      /capire perche funziona davvero|perche funziona davvero/.test(t) ||
+      /oltre il programma base|spiegazione piu rigorosa|limiti di questa teoria/.test(t)
+    ) return 8;
 
     // 2 — Esercizio, blocco, errore ricorrente, richiesta di indizio.
     if (
-      /esercizi?|sono bloccato|sono bloccata|mi blocco|sblocc/.test(t) ||
-      /continuo a sbagliare|sbaglio sempre|faccio sempre (lo stesso )?errore/.test(t) ||
+      /esercizi?|sono bloccato|sono bloccata|mi blocco|sblocc|sono fermo qui/.test(t) ||
+      /continuo a sbagliare|sbaglio sempre|faccio sempre (lo stesso )?errore|viene sempre sbagliat/.test(t) ||
       /problema (matematico|di matematica|di fisica|di geometria|da risolvere)/.test(t) ||
-      /non so come (andare avanti|continuare)|da qui (che|cosa) faccio/.test(t) ||
-      /dammi (solo )?un indizio|non dirmi la soluzione|aiutami a trovarla/.test(t) ||
+      /non so come (andare avanti|continuare)|da qui (che|cosa) faccio|passaggio viene dopo/.test(t) ||
+      /dammi (solo )?un indizio|senza risolverlo tu|non dirmi la soluzione|aiutami a trovarla/.test(t) ||
       /come si risolve (questo|questa)|mi aiuti a fare (il|la) \d+/.test(t) ||
+      /non riesco a finire (il|la|l['’]?)? ?(numero )?\d+/.test(t) ||
       /\bcorreggi questo\b/.test(t)
     ) return 2;
 
-    // 5 — Organizzazione e gestione del tempo.
-    if (
-      /organizz|piano di studio|programma(re)? lo studio|scadenza|tempo disponibile/.test(t) ||
-      /ho poco tempo|poco tempo|solo \d+ (minuti|min|ore)|mi restano? \d+ (minuti|min|ore|giorni)/.test(t) ||
-      /mi mancano? \d+ (giorni|ore)|ho \d+ giorni e \d+ (capitoli|argomenti)/.test(t) ||
-      /come divido lo studio|da dove iniziare a studiare tutto|troppe cose da fare/.test(t) ||
-      /dare priorita|cosa studio prima|un['’]?ora libera adesso/.test(t)
-    ) return 5;
-
     // 6 — Memoria e ripasso.
     if (
-      /ripass|ricord|memori|flashcard|dimentic/.test(t) ||
-      /non mi entra in testa|impararl[oa]? a memoria|imparare a memoria/.test(t)
+      /ripass|ricord|memori|flashcard|dimentic|scord/.test(t) ||
+      /non mi entra in testa|ficco in testa|impararl[oa]? a memoria|imparare a memoria/.test(t) ||
+      /letto .* volte.*non resta|non resta in testa|richiamo attivo/.test(t) ||
+      /ieri lo sapevo.*oggi/.test(t)
     ) return 6;
 
     // 1 — Comprensione, rispiegazione, esempi, analogie, noia.
     if (
-      /non capisco|non ho capito|non ci sto capendo|non la capisco|non lo capisco|nn capisco/.test(t) ||
+      /non capisco|non ho capito|non ci sto capendo|non ci capisco|non la capisco|non lo capisco|nn capisco/.test(t) ||
       /spiegami|spiegamelo|spieghi|rispieg|capire|non mi e chiaro/.test(t) ||
-      /che (vuol dire|significa)|fammi (un )?esempio|esempio concreto|analogia/.test(t) ||
+      /che (vuol dire|significa)|fammi (un )?esempio|esempio concreto|caso concreto|analogia/.test(t) ||
+      /parole normali|facile facile|non ha senso per me/.test(t) ||
       /mi annoio|noia|noioso|una palla|mi annoia|rendimel[oa] interessante/.test(t) ||
+      /fa schifo.*(meno pesante|rend)|addormentando.*(capitolo|argomento)/.test(t) ||
       /perche questa .* funziona/.test(t)
     ) return 1;
 
