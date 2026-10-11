@@ -137,6 +137,7 @@
       /(domani )?(mi )?(chiama|sente) la prof|prof mi sente/.test(t) ||
       /domani mi fara domande|simula la prof/.test(t) ||
       /parlare di .* davanti alla prof|parlare davanti alla prof|rispondere a voce/.test(t) ||
+      /per l['’]?interrogazione|per l['’]?orale/.test(t) ||
       /^(interrogazione|orale)$/.test(t)
     ) return 4;
 
@@ -153,7 +154,7 @@
       /(matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino) scritto/.test(t) ||
       /scritto di (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino)/.test(t) ||
       /prova (come quella|di (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino))/.test(t) ||
-      /simulazione del compito|^(verifica|compito)$/.test(t)
+      /simulazione del compito|per la verifica|per il compito|^(verifica|compito)$/.test(t)
     ) return 3;
 
     // 5 — Organizzazione / tempo limitato.
