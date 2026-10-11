@@ -4,7 +4,7 @@
 
 <!--
 ISTRUZIONE PER L'AI:
-AVVIO RAPIDO V0.3.
+AVVIO RAPIDO V0.4.
 NON leggere tutto il repository.
 Leggi START-HERE.md, poi runtime/FAST-START.md e runtime/CORE-MIN.md.
 Se l'utente ha già scritto cosa gli serve, salta il menu e instradalo direttamente.
