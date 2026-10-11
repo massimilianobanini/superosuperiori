@@ -116,7 +116,7 @@
     // 4 — Interrogazione/orale: evento scolastico esplicito prima di "approfondire".
     if (
       /interrogaz|\borale\b|interrogami|mi interroghi/.test(t) ||
-      /domande (del|della|come (il )?)prof/.test(t) ||
+      /domande (del |della |come (il )?)prof/.test(t) ||
       /fai finta.*prof.*interrog|finta interrogazione/.test(t) ||
       /domand[ae] alla volta/.test(t) ||
       /domani mi chiama la prof|parlare di .* davanti alla prof/.test(t)
