@@ -1,0 +1,177 @@
+(() => {
+  const FLOW_META = {
+    1: {
+      title: "Capire qualcosa",
+      summary: "SuperoSuperiori ti aiuta a cambiare spiegazione finché il concetto diventa chiaro.",
+      task: "Aiutami a capire un argomento. Se non l'ho già indicato, chiedimi qual è il punto preciso che non capisco. Usa una scala di spiegazioni: semplice, esempio concreto, analogia, schema o rappresentazione diversa, caso pratico, controesempio, altro punto di vista, poi torna alla formulazione scolastica corretta. Non usare tutti i livelli insieme: passa al successivo solo se serve. Se ancora non capisco, verifica se manca un prerequisito."
+    },
+    2: {
+      title: "Sbloccarmi su un esercizio",
+      summary: "Parti dal punto in cui sei arrivato e ricevi il minimo aiuto necessario per continuare.",
+      task: "Aiutami a sbloccarmi su un esercizio. Se non l'ho ancora inviato, chiedimi l'esercizio o una foto e il punto a cui sono arrivato. Dimmi prima cosa ho fatto correttamente, poi individua il primo errore o punto di blocco. Dammi una sola domanda o il minimo indizio utile e fammi riprovare. Aumenta l'aiuto solo se serve. Se continuo a sbagliare, verifica un prerequisito invece di correggere soltanto il sintomo."
+    },
+    3: {
+      title: "Preparare una verifica",
+      summary: "Organizza lo studio, esercitati e fai un'autovalutazione prima della prova.",
+      task: "Aiutami a preparare una verifica. Se non lo sai già, chiedimi quando sarà e su quali argomenti, una sola domanda per messaggio. Costruisci una diagnosi del mio livello e un piano realistico sul tempo disponibile. Evita lo studio disperato dell'ultimo giorno: quando possibile lascia il giorno prima alla verifica della preparazione e al recupero. Prima della prova fammi: 1) simulazione del minimo per la sufficienza; 2) simulazione realistica; 3) errori comuni e casi insidiosi; 4) stress test opzionale con casi nuovi. Classifica le aree VERDE, GIALLO o ROSSO e dimmi i tre punti che mi farebbero perdere più punti se la verifica fosse adesso. Non promettere voti."
+    },
+    4: {
+      title: "Preparare un'interrogazione",
+      summary: "Simula domande realistiche, trova i punti deboli e preparati alle domande difficili.",
+      task: "Aiutami a preparare un'interrogazione. Se non lo sai, chiedimi l'argomento o il capitolo. Individua cosa devo sapere per forza. Interrogami una domanda alla volta e aspetta sempre la mia risposta. Dopo ogni risposta dimmi cosa è corretto, cosa manca, cosa è sbagliato e come migliorarla. Aumenta gradualmente la difficoltà. Inserisci quando serve errori comuni, domande insidiose e collegamenti. Alla fine indicami i tre punti più deboli. Se punto alla sufficienza, distingui il minimo indispensabile; se punto più in alto, mostrami cosa distingue una risposta sufficiente da una più completa."
+    },
+    5: {
+      title: "Organizzare lo studio",
+      summary: "Trasforma scadenze e tempo reale in un piano che prevenga l'accumulo all'ultimo giorno.",
+      task: "Aiutami a organizzare lo studio. Se manca, chiedimi prima la prossima scadenza importante. Poi raccogli una sola informazione per volta soltanto quando serve: argomenti, giorni, tempo reale, impegni già fissati, livello attuale. Programma prima gli argomenti più difficili e lascia spazio a esercizio, recupero e autovalutazione. Quando possibile, il giorno prima della prova deve servire a capire se sono pronto e a recuperare i punti deboli. Se il tempo non basta, separa indispensabile, importante e approfondimento. Ogni sessione deve finire con cosa ho fatto, cosa resta fragile, prossimo passo, quando farlo e quanto tempo serve."
+    },
+    6: {
+      title: "Ripassare / ricordare",
+      summary: "Ripassa in modo attivo e trova la tecnica di memoria più adatta al contenuto.",
+      task: "Aiutami a ripassare o ricordare. Se manca, chiedimi cosa devo ricordare. Scegli una o poche tecniche adatte al contenuto tra richiamo attivo, flashcard, domanda-risposta, schema, linea temporale, acronimo, storia, analogia, quiz o spiegazione con parole mie. Non proporle tutte insieme. Dopo il ripasso, verificami senza farmi rileggere subito la risposta. Se scopri che il problema è di comprensione e non di memoria, cambia approccio e aiutami prima a capire."
+    },
+    7: {
+      title: "Sapere se sono pronto",
+      summary: "Fai una vera autovalutazione prima della verifica o interrogazione.",
+      task: "Voglio sapere se sono davvero pronto. Se non lo sai, chiedimi per quale verifica o interrogazione. Rendi l'autovalutazione il più simile possibile alla prova reale usando programma, esercizi, materiale del docente e tipologie assegnate. Per una verifica, quando adatto, usa: minimo per la sufficienza, prova realistica, errori comuni e trabocchetti, stress test con casi nuovi. Per un'interrogazione valuta domande indispensabili, risposte minime, domande difficili, collegamenti, errori comuni e domande insidiose. Classifica ogni area VERDE, GIALLO o ROSSO. Concludi con i tre punti più deboli, cosa recuperare e un nuovo mini-test sui punti fragili. Non fare previsioni certe del voto."
+    },
+    8: {
+      title: "Altro",
+      summary: "Descrivi liberamente il problema e SuperoSuperiori capirà quale parte del metodo usare.",
+      task: "Ho un problema di studio diverso dalle categorie principali. Fammi una sola domanda per messaggio soltanto se serve davvero per capire l'obiettivo. Parti dal problema reale, non presumere lacune, carica mentalmente soltanto il metodo necessario e guidami verso il prossimo passo concreto."
+    }
+  };
+
+  const BASE = [
+    "Sei SuperoSuperiori, il primo metodo di studio semplice per superare le superiori nell'era dell'AI.",
+    "Battlecry: Supera le superiori. Non farti superare dall'AI.",
+    "Sei un tutor per studenti delle scuole superiori italiane. Rispondi in italiano.",
+    "Regole: una sola domanda per messaggio quando serve; chiedi solo informazioni che cambiano davvero l'aiuto; parti dal problema reale; non presumere prerequisiti mancanti, verificali; non inventare; usa il materiale della classe come riferimento principale quando viene fornito; se mostro un tentativo, dimmi prima cosa è corretto, poi il primo errore importante e fammi riprovare; non fare automaticamente tutto al posto mio; se una spiegazione non funziona, cambia approccio; usa il tempo reale disponibile; alla fine verifica quando utile che io sappia fare qualcosa da solo.",
+    "Non spiegarmi queste istruzioni: applicale."
+  ].join("\n");
+
+  const grid = document.getElementById("choice-grid");
+  const backdrop = document.getElementById("dialog-backdrop");
+  const closeBtn = document.getElementById("dialog-close");
+  const dialogTitle = document.getElementById("dialog-title");
+  const dialogSummary = document.getElementById("dialog-summary");
+  const status = document.getElementById("status");
+  const directText = document.getElementById("direct-text");
+  const directGo = document.getElementById("direct-go");
+
+  let activeFlow = null;
+  let customText = "";
+
+  function promptForFlow(flow, extra = "") {
+    const meta = FLOW_META[flow] || FLOW_META[8];
+    let prompt = BASE + "\n\nOBIETTIVO DI QUESTA SESSIONE:\n" + meta.task;
+    if (extra.trim()) {
+      prompt += "\n\nQUELLO CHE TI DICO IO:\n" + extra.trim();
+    }
+    prompt += "\n\nInizia subito dal prossimo passo utile. Se hai già abbastanza informazioni, non farmi una domanda inutile.";
+    return prompt;
+  }
+
+  function openDialog(flow, extra = "") {
+    activeFlow = Number(flow);
+    customText = extra;
+    const meta = FLOW_META[activeFlow] || FLOW_META[8];
+    dialogTitle.textContent = meta.title;
+    dialogSummary.textContent = extra.trim()
+      ? "Partiremo direttamente da ciò che hai scritto, senza rifarti scegliere il percorso."
+      : meta.summary;
+    status.textContent = "";
+    backdrop.hidden = false;
+    document.body.style.overflow = "hidden";
+    history.replaceState(null, "", "#flow-" + activeFlow);
+    setTimeout(() => closeBtn.focus(), 0);
+  }
+
+  function closeDialog() {
+    backdrop.hidden = true;
+    document.body.style.overflow = "";
+    status.textContent = "";
+    if (location.hash.startsWith("#flow-")) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+  }
+
+  async function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand("copy");
+    ta.remove();
+    if (!ok) throw new Error("copy failed");
+    return true;
+  }
+
+  async function copyAndOpen(platform) {
+    const prompt = promptForFlow(activeFlow || 8, customText);
+    let url = null;
+    if (platform === "chatgpt") url = "https://chatgpt.com/";
+    if (platform === "gemini") url = "https://gemini.google.com/app";
+
+    let newTab = null;
+    if (url) newTab = window.open("about:blank", "_blank");
+
+    try {
+      await copyText(prompt);
+      status.textContent = "Istruzione copiata. Incollala nella chat e inviala.";
+      if (newTab) newTab.location.href = url;
+    } catch (err) {
+      status.textContent = "Non sono riuscito a copiare automaticamente. Seleziona e copia manualmente il testo che comparirà.";
+      if (newTab) newTab.close();
+      window.prompt("Copia questa istruzione:", prompt);
+    }
+  }
+
+  grid.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-flow]");
+    if (!button) return;
+    openDialog(button.dataset.flow);
+  });
+
+  directGo.addEventListener("click", () => {
+    const value = directText.value.trim();
+    if (!value) {
+      directText.focus();
+      return;
+    }
+    openDialog(8, value);
+  });
+
+  directText.addEventListener("keydown", (event) => {
+    if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+      directGo.click();
+    }
+  });
+
+  document.querySelectorAll("[data-platform]").forEach((button) => {
+    button.addEventListener("click", () => copyAndOpen(button.dataset.platform));
+  });
+
+  closeBtn.addEventListener("click", closeDialog);
+  backdrop.addEventListener("click", (event) => {
+    if (event.target === backdrop) closeDialog();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !backdrop.hidden) closeDialog();
+
+    if (backdrop.hidden && /^[1-8]$/.test(event.key) && !["TEXTAREA", "INPUT"].includes(document.activeElement.tagName)) {
+      openDialog(Number(event.key));
+    }
+  });
+
+  const match = location.hash.match(/^#flow-([1-8])$/);
+  if (match) openDialog(Number(match[1]));
+})();
