@@ -1,6 +1,8 @@
 # Limiti noti — V0.4
 
-Questo file elenca problemi o limiti già conosciuti. Non sono nascosti: fanno parte del lavoro di miglioramento.
+Questo file elenca problemi o limiti tecnici e operativi già conosciuti. Non sono nascosti: fanno parte del lavoro di miglioramento.
+
+Per una spiegazione più semplice e completa del perimetro del progetto — cosa può fare, cosa non può fare e come va interpretata l'autovalutazione — vedere [COSA-PUO-E-NON-PUO-FARE.md](COSA-PUO-E-NON-PUO-FARE.md).
 
 ## 1. Il comportamento dipende dalla piattaforma
 
