@@ -68,6 +68,8 @@
     const t = text.toLowerCase();
 
     if (/\b(sono|sei|essere|mi sento)\s+(davvero\s+)?pront[oa]\b|autovalut|auto-valut|mettimi alla prova|testami/.test(t)) return 7;
+    if (/(verifica|controlla|ricontrolla).*(chatgpt|gemini|altra ai|un['’]?altra ai|risposta (dell['’]?ai|di chatgpt|di gemini))|quello che ha detto (chatgpt|gemini|l['’]?ai)/.test(t)) return 8;
+    if (/(verifica|controlla|ricontrolla).*(esercizio|soluzione|risultato|procedimento|calcolo)/.test(t)) return 2;
     if (/interrogaz|orale\b/.test(t)) return 4;
     if (/verifica|compito in classe|test scolast|prova scritta/.test(t)) return 3;
     if (/esercizi?|sono bloccato|sono bloccata|mi blocco|sblocc|continuo a sbagliare|sbaglio sempre|faccio sempre (lo stesso )?errore|problema (matematico|di matematica|di fisica|di geometria|da risolvere)/.test(t)) return 2;
