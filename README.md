@@ -121,6 +121,7 @@ La domanda importante è:
 - [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — limiti già conosciuti della versione corrente.
 - [CHANGELOG.md](CHANGELOG.md) — modifiche tra le versioni.
 - [testing/STRESS-TEST-V0.4.md](testing/STRESS-TEST-V0.4.md) — stress test dell'interfaccia web e del routing V0.4.
+- [testing/INTENT-ROUTER-STRESS-V0.4.md](testing/INTENT-ROUTER-STRESS-V0.4.md) — stress test linguistico del campo libero: sinonimi, frasi miste, abbreviazioni e falsi positivi.
 - [testing/STRESS-TEST-V0.1.md](testing/STRESS-TEST-V0.1.md) — storico dello stress test della V0.1.
 - [GEMINI-START.md](GEMINI-START.md) — fallback autosufficiente dedicato a Gemini.
 
