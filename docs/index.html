@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SuperoSuperiori — Il primo metodo di studio semplice per superare le superiori nell'era dell'AI.">
+  <title>SuperoSuperiori</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap brand-row">
+      <a class="brand" href="./" aria-label="SuperoSuperiori, pagina iniziale">SUPEROSUPERIORI</a>
+      <a class="small-link" href="https://github.com/massimilianobanini/superosuperiori" target="_blank" rel="noopener">Progetto open source</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">METODO DI STUDIO SEMPLICE NELL'ERA DELL'AI</p>
+      <h1>Il primo metodo di studio semplice per superare le superiori nell'era dell'AI.</h1>
+      <p class="battlecry">Supera le superiori. Non farti superare dall'AI.</p>
+      <p class="intro">Usa l'AI come un tutor disponibile quando ti serve: per capire, organizzarti, esercitarti e scoprire prima di una verifica o interrogazione se sei davvero pronto.</p>
+
+      <div class="cases" aria-label="Due modi di usare SuperoSuperiori">
+        <article class="case">
+          <span class="case-label">A — DEVI SBLOCCARTI</span>
+          <p>Hai perso qualche passaggio, hai una lacuna, non capisci un argomento o non sai dove nasce il problema. SuperoSuperiori cerca di capire cosa ti blocca e ti guida un passo alla volta.</p>
+        </article>
+        <article class="case">
+          <span class="case-label">B — VUOI APPROFONDIRE</span>
+          <p>Hai già capito le basi e vuoi più contesto, collegamenti, punti di vista o prepararti meglio. SuperoSuperiori ti aiuta ad andare più a fondo.</p>
+        </article>
+      </div>
+      <p class="case-note">Puoi essere nel caso A in matematica e nel caso B in storia.</p>
+    </section>
+
+    <section class="chooser wrap" aria-labelledby="chooser-title">
+      <div class="section-head">
+        <p class="step">PASSO 1</p>
+        <h2 id="chooser-title">Cosa ti serve adesso?</h2>
+        <p>Scegli un numero. Non devi preparare un prompt e non devi spiegare tutto subito.</p>
+      </div>
+
+      <div class="choice-grid" id="choice-grid">
+        <button class="choice" data-flow="1">
+          <span class="num">1</span>
+          <span><strong>Capire qualcosa</strong><small>Non capisco un argomento / spiegamelo in un altro modo.</small></span>
+        </button>
+        <button class="choice" data-flow="2">
+          <span class="num">2</span>
+          <span><strong>Sbloccarmi su un esercizio</strong><small>Sono arrivato fin qui e non so come continuare.</small></span>
+        </button>
+        <button class="choice" data-flow="3">
+          <span class="num">3</span>
+          <span><strong>Preparare una verifica</strong><small>Organizziamo cosa studiare, esercitiamoci e vediamo se sono pronto.</small></span>
+        </button>
+        <button class="choice" data-flow="4">
+          <span class="num">4</span>
+          <span><strong>Preparare un'interrogazione</strong><small>Fammi domande, trova i miei punti deboli e prepariamoci alle domande difficili.</small></span>
+        </button>
+        <button class="choice" data-flow="5">
+          <span class="num">5</span>
+          <span><strong>Organizzare lo studio</strong><small>Ho questi argomenti, questa scadenza e questo tempo disponibile.</small></span>
+        </button>
+        <button class="choice" data-flow="6">
+          <span class="num">6</span>
+          <span><strong>Ripassare / ricordare</strong><small>L'ho studiato, ma non mi rimane in testa.</small></span>
+        </button>
+        <button class="choice" data-flow="7">
+          <span class="num">7</span>
+          <span><strong>Sapere se sono pronto</strong><small>Fammi una vera autovalutazione prima della verifica o interrogazione.</small></span>
+        </button>
+        <button class="choice" data-flow="8">
+          <span class="num">8</span>
+          <span><strong>Altro</strong><small>Ho un problema diverso.</small></span>
+        </button>
+      </div>
+
+      <div class="direct">
+        <label for="direct-text"><strong>Oppure scrivi direttamente cosa ti serve</strong></label>
+        <textarea id="direct-text" rows="3" placeholder="Esempio: ho una verifica di fisica venerdì e non capisco le equivalenze."></textarea>
+        <button class="primary" id="direct-go">Continua</button>
+      </div>
+    </section>
+
+    <section class="method wrap">
+      <div class="section-head compact">
+        <p class="step">IL METODO</p>
+        <h2>SUPERA</h2>
+      </div>
+      <div class="method-grid">
+        <div><strong>S</strong><span>Scopri</span></div>
+        <div><strong>U</strong><span>Usa l'AI come tutor</span></div>
+        <div><strong>P</strong><span>Programma</span></div>
+        <div><strong>E</strong><span>Esercitati</span></div>
+        <div><strong>R</strong><span>Ripassa e recupera</span></div>
+        <div><strong>A</strong><span>Autovalutati</span></div>
+      </div>
+      <p class="method-note">Non scoprire durante la prova se eri pronto. Scoprilo prima.</p>
+    </section>
+  </main>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <button class="close" id="dialog-close" aria-label="Chiudi">×</button>
+      <p class="step">PASSO 2</p>
+      <h2 id="dialog-title">Continua con la tua AI</h2>
+      <p id="dialog-summary" class="dialog-summary"></p>
+
+      <div class="platforms">
+        <button class="platform primary" data-platform="chatgpt">Copia e apri ChatGPT</button>
+        <button class="platform secondary" data-platform="gemini">Copia e apri Gemini</button>
+        <button class="platform ghost" data-platform="copy">Copia soltanto l'istruzione</button>
+      </div>
+
+      <p class="paste-note" id="paste-note">L'istruzione viene copiata automaticamente. Nella chat che si apre, incollala e inviala.</p>
+      <div class="status" id="status" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>SuperoSuperiori — progetto pilota open source</span>
+      <a href="https://github.com/massimilianobanini/superosuperiori/blob/main/PRIVACY.md" target="_blank" rel="noopener">Privacy e uso responsabile</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
