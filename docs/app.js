@@ -71,6 +71,7 @@
       .replace(/[\u0300-\u036f]/g, "")
       .replace(/[’]/g, "'")
       .replace(/\bnn\b/g, "non")
+      .replace(/\bnon c capisco\b/g, "non ci capisco")
       .replace(/\bsn\b/g, "sono")
       .replace(/\bcm\b/g, "come")
       .replace(/\bdv\b/g, "dove")
@@ -206,7 +207,7 @@
       /\besercizi(?:o)?\b|sono bloccato|sono bloccata|mi blocco|sblocc|sono fermo qui|sono inchiodato qui/.test(t) ||
       /continuo a sbagliare|sbaglio sempre|faccio sempre (lo stesso )?errore|viene sempre sbagliat|incasino sempre.*segni/.test(t) ||
       /problema (matematico|di matematica|di fisica|di geometria|da risolvere)/.test(t) ||
-      /non so come (andare avanti|continuare)|da qui (che|cosa) faccio|passaggio viene dopo|prossimo passaggio/.test(t) ||
+      /non so come (andare avanti|continuare)|come vado avanti|da qui (che|cosa) faccio|passaggio viene dopo|prossimo passaggio/.test(t) ||
       /dammi (solo )?(un|1) indizio|senza risolverlo tu|senza farmelo tu|non dirmi la soluzione|aiutami a trovarla/.test(t) ||
       /come si risolve (questo|questa)|mi aiuti a fare (il|la) \d+|aiutami (col|con il) (numero )?\d+/.test(t) ||
       /non riesco a (finire|finirlo|chiudere) (il|la|l['’]?)? ?(numero )?\d*|non riesco a (chiuderlo|finirlo)/.test(t) ||
@@ -230,7 +231,7 @@
       /non lo afferro|non ci arrivo|mi perdo.*passaggio/.test(t) ||
       /spiegami|spiegamelo|spieghi|spiegalo|rispieg|capire|non mi e chiaro/.test(t) ||
       /che (vuol dire|significa)|non so che significa|fammi (un )?esempio|esempio concreto|caso concreto|analogia/.test(t) ||
-      /parole normali|terra terra|facile facile|senza paroloni|non ha senso per me|modo visivo|piu intuitiva/.test(t) ||
+      /parole normali|terra terra|facile facile|senza paroloni|non ha senso( per me)?|modo visivo|piu intuitiva/.test(t) ||
       /mi annoio|noia|noioso|una palla|mi annoia|rendimel[oa] interessante/.test(t) ||
       /fa schifo.*(meno pesante|rend)|addormentando.*(capitolo|argomento)/.test(t) ||
       /perche questa .* funziona|perche succede/.test(t)
