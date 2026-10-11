@@ -1,147 +1,176 @@
 # Supporto delle piattaforme — V0.4
 
-SuperoSuperiori è progettato per essere il più possibile indipendente dalla piattaforma AI.
+SuperoSuperiori è progettato per essere il più possibile indipendente dalla singola AI.
 
-**Progettato per funzionare** non significa **già verificato**.
+**Progettato per funzionare** non significa **già verificato in ogni modalità e su ogni piattaforma**.
 
-## Stato dei test
+Questa pagina distingue ciò che è stato realmente osservato da ciò che è soltanto previsto dal progetto.
 
-| Piattaforma | Lettura del solo link | Link + problema concreto | Stato V0.4 |
-|---|---|---|---|
-| ChatGPT | osservato: funziona | osservato: comportamento non ancora stabile prima delle ultime correzioni | sperimentale |
-| Gemini | FAIL via link web/repository | PASS runtime tramite Skill `/superosuperiori`; una domanda per messaggio dopo correzione | bootstrap Skill validato sperimentalmente |
-| Altre AI | non verificato | non verificato | da testare |
+---
 
-## Cosa significa "supportata"
+## Ingresso consigliato per gli studenti
 
-Una piattaforma non viene dichiarata supportata soltanto perché riesce ad aprire GitHub.
-
-Per considerarla supportata deve almeno:
-
-1. capire che il solo link avvia SuperoSuperiori;
-2. mostrare l'avviso iniziale;
-3. distinguere tra "solo link" e "link + problema";
-4. seguire le regole fondamentali del tutor;
-5. riuscire a usare i file collegati oppure applicare il fallback minimo di START-HERE.
-
-## Se una piattaforma non apre i file collegati
-
-Il progetto contiene un fallback minimo dentro `START-HERE.md`.
-
-Una piattaforma che legge soltanto il README o START-HERE può comunque fornire una versione ridotta del metodo, ma non va considerata pienamente supportata finché il comportamento non è affidabile.
-
-## Funzioni e nomi cambiano
-
-Nomi dei modelli, modalità veloci o avanzate, limiti, piani e requisiti di età possono cambiare.
-
-Per questo SuperoSuperiori cerca di descrivere il comportamento desiderato senza dipendere da un nome specifico della piattaforma.
-
-## Regola di pubblicazione
-
-Non aggiungere una piattaforma all'elenco delle piattaforme supportate senza una prova reale in chat nuova.
-
-
-## Esito Gemini del 3 ottobre 2026
-
-### Test 1 — solo link: FAIL
-
-Gemini ha riconosciuto l'URL come repository GitHub pubblico, ma ha dichiarato che il repository risultava vuoto o privo di README e sorgenti.
-
-Questo non corrisponde allo stato reale del repository, che contiene README, START-HERE, core, modalità, Kit e altri file.
-
-Conclusione: in questo test Gemini non ha recuperato correttamente il contenuto corrente del repository.
-
-### Test 2 — link + problema: FAIL
-
-Gemini non ha applicato SuperoSuperiori.
-
-In particolare:
-- non ha mostrato l'avviso iniziale;
-- non ha seguito il routing del repository;
-- ha presunto subito lacune e scenari;
-- ha inventato percentuali di probabilità sul risultato;
-- ha dato una lezione ampia prima di vedere un esercizio reale;
-- ha usato un tono non coerente con il progetto;
-- ha fornito regole troppo generali per alcuni casi di disequazioni.
-
-Conclusione: il link GitHub da solo non è al momento un ingresso affidabile per Gemini.
-
-### Conseguenza
-
-Nella V0.4 Gemini non va dichiarato supportato tramite il solo URL del repository.
-
-Un eventuale fallback specifico per Gemini va trattato come percorso separato e testato a parte.
-
-
-## Fallback dedicato Gemini
-
-È disponibile un file autosufficiente:
-
-`GEMINI-START.md`
-
-URL diretto consigliato per il test:
-
-https://raw.githubusercontent.com/massimilianobanini/superosuperiori/main/GEMINI-START.md
-
-Questo fallback non richiede a Gemini di esplorare il repository o seguire altri file per iniziare.
-
-Stato: **da validare runtime**.
-
-
-## Pagina GitHub Pages
-
-È disponibile:
+L'ingresso consigliato è la web app:
 
 https://massimilianobanini.github.io/superosuperiori/
 
-Nel test runtime con Gemini del 3 ottobre 2026, Gemini ha letto correttamente il contenuto della pagina ma lo ha **riassunto in inglese invece di eseguire le istruzioni**.
+La web app non chiede all'AI di leggere tutto GitHub.
 
-Conclusione: una normale pagina web, anche autosufficiente, non è un bootstrap affidabile per Gemini.
+Lo studente:
+1. sceglie uno dei percorsi 1–8 oppure scrive direttamente il problema;
+2. SuperoSuperiori seleziona localmente il flow;
+3. viene generata un'istruzione autosufficiente e breve;
+4. l'istruzione viene copiata;
+5. si apre ChatGPT o Gemini;
+6. lo studente incolla e invia.
 
-La pagina può restare utile come ingresso umano/landing page, ma **non va considerata un avvio automatico dell'AI**.
+Questo percorso riduce la dipendenza dalla capacità dell'AI di leggere repository o pagine web.
 
-## Fallback Gemini consigliato
+---
 
-Per Gemini il percorso affidabile da validare è un **Gem personalizzato di SuperoSuperiori**, con le regole inserite nelle istruzioni del Gem e condiviso tramite link.
+## Stato attuale
 
-Il file `GEMINI-START.md` resta la base canonica delle istruzioni da inserire nel Gem.
+| Piattaforma / ingresso | Stato | Note |
+|---|---|---|
+| Web app → ChatGPT | **da validare manualmente su dispositivo reale** | routing e copia/apertura superano lo stress test tecnico; resta da verificare il comportamento reale della chat |
+| Web app → Gemini | **da validare manualmente su dispositivo reale** | routing e copia/apertura superano lo stress test tecnico; resta da verificare il comportamento reale della chat |
+| ChatGPT → solo link GitHub | **sperimentale** | in test precedenti ha mostrato di poter avviare il progetto, ma il comportamento non è stato sempre stabile |
+| Gemini → solo link GitHub | **non affidabile** | nei test non ha applicato correttamente SuperoSuperiori |
+| Gemini Skill `/superosuperiori` | **validata sperimentalmente** | dopo la correzione ha rispettato lingua, routing, niente esercizi inventati e una sola domanda ad alto valore |
+| Altre AI | **non verificate** | da testare |
 
+---
 
-## Esito Skill Gemini
+## ChatGPT
 
-### Test runtime — 3 ottobre 2026: PASS CON DIFETTO MINORE
+### Solo link GitHub
 
-Prompt:
-`/superosuperiori Ho una verifica di matematica giovedì e non capisco le disequazioni.`
+Nei test iniziali ChatGPT ha mostrato di poter leggere il repository e avviare SuperoSuperiori.
 
-Comportamento osservato:
-- risposta in italiano;
-- avviso iniziale mostrato correttamente;
-- nessun menu 1/2/3 perché il problema era già dichiarato;
-- nessun esercizio inventato;
-- nessuna diagnosi automatica dei prerequisiti;
-- richiesta di un esercizio reale / tipo di disequazione;
-- approccio passo-passo coerente con SuperoSuperiori.
+Tuttavia il comportamento con richieste concrete è stato variabile prima delle successive correzioni.
 
-Difetto:
-- Gemini ha posto due domande nello stesso messaggio invece di una sola.
+Per questo il solo link GitHub resta un ingresso **sperimentale**, non quello consigliato agli studenti.
+
+### Web app
+
+La web app elimina la necessità di far leggere il repository a ChatGPT.
+
+Lo stress test V0.4 ha verificato:
+- routing 1–8;
+- classificazione del testo libero;
+- generazione del prompt;
+- copia;
+- apertura di ChatGPT;
+- assenza di caricamento dell'intero repository.
+
+Resta da validare manualmente:
+- clipboard reale;
+- apertura su browser mobile;
+- qualità della prima risposta del modello.
+
+---
+
+## Gemini
+
+### Solo link GitHub: non affidabile
+
+Nei test del 3 ottobre 2026 Gemini:
+- non ha recuperato correttamente il contenuto del repository;
+- non ha applicato il metodo;
+- ha saltato il routing;
+- ha fatto assunzioni non richieste;
+- ha fornito risposte non coerenti con le regole del progetto.
 
 Conclusione:
-la Skill è un fallback Gemini funzionante e molto più affidabile del semplice link web.
 
+**il solo link GitHub non è un ingresso affidabile per Gemini.**
 
-### Retest dopo correzione — PASS
+### Pagina web letta direttamente da Gemini
 
-Prompt:
-`/superosuperiori Ho una verifica di matematica giovedì e non capisco le disequazioni logaritmiche`
+In un test precedente Gemini è riuscito a leggere la pagina pubblica ma l'ha trattata come contenuto da riassumere invece di eseguire automaticamente le istruzioni.
 
-Risultato osservato:
+Per questo una normale pagina web non va considerata da sola un comando affidabile per l'AI.
+
+### Skill Gemini `/superosuperiori`
+
+La Skill è stata testata in runtime.
+
+Dopo la correzione "una sola domanda per messaggio", il retest ha prodotto:
+
 - risposta in italiano;
-- avviso iniziale corretto;
-- nessun menu 1/2/3;
+- nessun menu quando il problema era già dichiarato;
 - nessun esercizio inventato;
 - nessuna diagnosi arbitraria dei prerequisiti;
 - una sola domanda ad alto valore;
-- richiesta di un esercizio reale.
+- richiesta di partire da un esercizio reale.
 
-Conclusione: il bootstrap Gemini tramite Skill è validato per la V0.4.
+Conclusione:
+
+**la Skill Gemini è validata sperimentalmente come percorso dedicato.**
+
+Versione canonica:
+
+[gemini/SKILL.md](gemini/SKILL.md)
+
+### Web app → Gemini
+
+La V0.4 usa un meccanismo diverso dal vecchio "Gemini legge la pagina".
+
+La pagina costruisce prima un'istruzione autosufficiente, la copia e apre Gemini.
+
+Il comportamento tecnico della web app ha superato lo stress test, ma il flusso completo va ancora verificato manualmente su dispositivo reale.
+
+---
+
+## Fallback Gemini
+
+Il file:
+
+[GEMINI-START.md](GEMINI-START.md)
+
+resta come riferimento tecnico e base autosufficiente.
+
+Non è l'ingresso consigliato per uno studente quando sono disponibili:
+- web app;
+- Skill Gemini.
+
+---
+
+## Cosa significa "supportata"
+
+Una piattaforma o un percorso non viene dichiarato supportato soltanto perché riesce ad aprire un link.
+
+Per considerarlo realmente supportato bisogna verificare almeno:
+
+1. avvio corretto;
+2. lingua italiana;
+3. routing coerente con la richiesta;
+4. una sola domanda alla volta quando serve;
+5. assenza di diagnosi arbitrarie;
+6. uso corretto del materiale dello studente;
+7. comportamento coerente con il flow scelto;
+8. continuità della sessione;
+9. funzionamento su un dispositivo reale.
+
+---
+
+## Funzioni e regole cambiano
+
+Nomi dei modelli, funzioni, piani, requisiti di età e limiti possono cambiare.
+
+SuperoSuperiori cerca quindi di definire il **comportamento desiderato** senza dipendere troppo dal nome di uno specifico modello.
+
+Prima di dichiarare una piattaforma supportata o compatibile con una certa fascia di età, serve una verifica aggiornata.
+
+---
+
+## Regola di pubblicazione
+
+Non aggiungere una piattaforma all'elenco delle piattaforme supportate senza una prova reale.
+
+Distinguere sempre:
+
+- **progettato per funzionare**;
+- **stress test tecnico superato**;
+- **test runtime superato**;
+- **validato su dispositivo reale**.
