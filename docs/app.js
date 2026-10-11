@@ -73,11 +73,14 @@
       .replace(/\s+/g, " ")
       .trim();
 
+    const day = "(?:oggi|domani|dopodomani|lunedi|martedi|mercoledi|giovedi|venerdi|sabato|domenica|settimana prossima)";
+
     // 7 — Autovalutazione / "sono davvero pronto?"
     if (
       /\b(sono|mi sento|posso considerarmi)\s+(davvero\s+)?pront[oa]\b/.test(t) ||
       /\b(sono|quanto sono|mi sento|vediamo se sono|fammi capire se sono)\s+preparat[oa]\b/.test(t) ||
-      /autovalut|auto-valut|mettimi alla prova|\btestami\b|check finale|test finale|prova generale/.test(t) ||
+      /(voglio|fammi|fai|facciamo|vorrei).{0,20}autovalut|^autovalutazione$|auto-valut/.test(t) ||
+      /mettimi alla prova|\btestami\b|check finale|test finale|prova generale/.test(t) ||
       /valuta (la )?mia preparazione|ultima simulazione.*domani/.test(t) ||
       /vedere se (so|ho capito|sono preparat|ricordo tutto)|capire se quello che so basta/.test(t) ||
       /vedere cosa non so|trova.*cosa non so|dimmi dove sono debole|dove sono debole|che buchi ho|scova.*lacune/.test(t) ||
@@ -108,14 +111,13 @@
       /trova (il )?primo errore|conto non torna|mi viene .* sul libro/.test(t)
     ) return 2;
 
-    // 6 — Interrogami per ripassare/ricordare, non per simulare un orale.
+    // 6 — "Interrogami per ripassare/ricordare" è memoria, non simulazione orale.
     if (
       /(interrogami|fammi.*domande).*(ricord|ripass)/.test(t) ||
       /(ricord|ripass).*(interrogami|fammi.*domande)/.test(t)
     ) return 6;
 
-    // 5 — Pianificazione esplicita con più impegni o un budget di tempo.
-    // Ha priorità su singole parole come "verifiche" o "esercizi".
+    // 5 — Pianificazione esplicita con più impegni o budget di tempo.
     if (
       /questa settimana ho (\d+|due|tre|quattro|cinque) verifiche/.test(t) ||
       /ho solo stasera|pianificami \d+ minuti|come distribuisco/.test(t) ||
@@ -124,35 +126,40 @@
       /(\d+|due|tre|quattro|cinque) capitoli in (\d+|uno|due|tre|quattro) giorni/.test(t)
     ) return 5;
 
-    // 4 — Interrogazione/orale.
+    // 4 — Evento orale esplicito.
     if (
-      /interrogaz|interrogato|\borale\b|interrogami|mi interroghi/.test(t) ||
+      new RegExp("\\b(ho|devo|avro|prepar|simul|fammi|facciamo|saro).{0,35}(interrogaz|orale)").test(t) ||
+      new RegExp("(interrogaz|orale).{0,30}" + day).test(t) ||
+      /interrogami|mi interroghi|interrogato/.test(t) ||
       /domande (del |della |come (il )?)prof/.test(t) ||
       /fai finta.*prof.*interrog|finta interrogazione|(fammi|mi fai) da prof.*domande/.test(t) ||
       /domand[ae] alla volta|domande da orale/.test(t) ||
       /(domani )?(mi )?(chiama|sente) la prof|prof mi sente/.test(t) ||
       /domani mi fara domande|simula la prof/.test(t) ||
-      /parlare di .* davanti alla prof|parlare davanti alla prof|rispondere a voce/.test(t)
+      /parlare di .* davanti alla prof|parlare davanti alla prof|rispondere a voce/.test(t) ||
+      /^(interrogazione|orale)$/.test(t)
     ) return 4;
 
-    // 3 — Verifica/compito scritto.
+    // 3 — Evento scritto esplicito.
     if (
-      /\bverifica\b|compito in classe|prova scritta|test scolast/.test(t) ||
-      /\b(ho|avro|domani|lunedi|martedi|mercoledi|giovedi|venerdi).{0,30}\btest\b/.test(t) ||
-      /\btest di [a-z]/.test(t) ||
-      /\bcompito\b.*(mate|matemat|fisic|italian|ingles|storia|scienze|chimic|tedesc|frances|domani|su )/.test(t) ||
+      new RegExp("\\b(ho|devo|avro|prepar|simul|fammi|domani|" + day.slice(3,-1) + ").{0,35}(verifica|compito|test|prova scritta)").test(t) ||
+      new RegExp("(verifica|compito|test|prova scritta).{0,30}" + day).test(t) ||
+      /compito in classe|test scolast/.test(t) ||
+      /\btest di (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino|grammatica|geografia|informatica)\b/.test(t) ||
+      /\bcompito\b.*(mate|matemat|fisic|italian|ingles|storia|scienze|chimic|tedesc|frances|latino|domani|su )/.test(t) ||
       /(prepar|esercit).*(per )?(il|un) compito/.test(t) ||
       /(cosa|che cosa).*(uscire|potrebbe uscire|puo mettere).*compito/.test(t) ||
-      /voglio (il|almeno) [0-9]+.*compito/.test(t) ||
+      /voglio (il|almeno) [0-9]+.*(compito|verifica)/.test(t) ||
       /(matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino) scritto/.test(t) ||
       /scritto di (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino)/.test(t) ||
       /prova (come quella|di (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino))/.test(t) ||
-      /simulazione del compito/.test(t)
+      /simulazione del compito|^(verifica|compito)$/.test(t)
     ) return 3;
 
     // 5 — Organizzazione / tempo limitato.
     if (
-      /organizz|piano di studio|programma(re)? lo studio|scadenza|tempo disponibile|incastr/.test(t) ||
+      /mi organizz|organizzami|organizzare lo studio|organizzarmi|come mi organizzo/.test(t) ||
+      /piano di studio|programma(re)? lo studio|scadenza|tempo disponibile|incastr/.test(t) ||
       /ho poco tempo|poco tempo/.test(t) ||
       /\b(ho|solo|mi restano?|mi mancano?)\s+(\d+|una|un|due|tre|quattro|cinque|sei|sette|otto)\s+(minuti|min|ore|giorni)\b/.test(t) ||
       /ho \d+ giorni e \d+ (capitoli|argomenti)/.test(t) ||
@@ -161,6 +168,15 @@
       /scaletta.*(giorni|settimana)|entro (lunedi|martedi|mercoledi|giovedi|venerdi|sabato|domenica)/.test(t) ||
       /questa settimana.*(compiti|materie|studiare)/.test(t)
     ) return 5;
+
+    // Domanda concettuale/definizione: evita falsi positivi su parole come
+    // "memoria", "test", "orale", "organizzazione", "autovalutazione".
+    if (
+      /^(che )?cos['’]?e\b|^cosa sono\b|^che cosa (vuol dire|significa)\b|^cosa (vuol dire|significa)\b/.test(t) ||
+      /^qual e il compito (del|della|dei|delle|di)\b/.test(t) ||
+      /^come funziona\b|^come si calcola\b|^perche si parla di\b/.test(t) ||
+      /^spiegami (l['’]|la |il |lo |le |i |gli |un |una |come |cosa |perche )/.test(t)
+    ) return 1;
 
     // 8 — Approfondimento intenzionale.
     if (
@@ -172,7 +188,7 @@
 
     // 2 — Esercizio, blocco, errore ricorrente, richiesta di indizio.
     if (
-      /esercizi?|sono bloccato|sono bloccata|mi blocco|sblocc|sono fermo qui|sono inchiodato qui/.test(t) ||
+      /\besercizi?\b|sono bloccato|sono bloccata|mi blocco|sblocc|sono fermo qui|sono inchiodato qui/.test(t) ||
       /continuo a sbagliare|sbaglio sempre|faccio sempre (lo stesso )?errore|viene sempre sbagliat|incasino sempre.*segni/.test(t) ||
       /problema (matematico|di matematica|di fisica|di geometria|da risolvere)/.test(t) ||
       /non so come (andare avanti|continuare)|da qui (che|cosa) faccio|passaggio viene dopo|prossimo passaggio/.test(t) ||
@@ -182,9 +198,10 @@
       /\bcorreggi questo\b/.test(t)
     ) return 2;
 
-    // 6 — Memoria e ripasso.
+    // 6 — Memoria e ripasso: segnali operativi, non la parola "memoria" come concetto.
     if (
-      /ripass|ricord|memori|flashcard|dimentic|scord/.test(t) ||
+      /ripass|ricord|memorizz|dimentic|scord/.test(t) ||
+      /(crea(mi)?|fammi|trasforma.*in|preparami).{0,20}flashcard|flashcard per/.test(t) ||
       /non mi entra in testa|ficco in testa|fissarl[oa]? in testa|fissarlo in testa/.test(t) ||
       /impararl[oa]? a memoria|imparare a memoria/.test(t) ||
       /letto .* volte.*non resta|non (mi )?resta (niente|nulla|in testa)|richiamo attivo/.test(t) ||
