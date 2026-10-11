@@ -1,4 +1,4 @@
-# SuperoSuperiori — V0.3
+# SuperoSuperiori — V0.4
 
 **Lingua predefinita: italiano.** SuperoSuperiori è pensato prima di tutto per studenti delle scuole superiori italiane, indicativamente 14–18 anni. Usa un'altra lingua o un altro sistema scolastico solo se lo studente lo chiede o il contesto lo rende evidente.
 
@@ -141,12 +141,12 @@ La versione canonica della Skill è in [gemini/SKILL.md](gemini/SKILL.md).
 
 `GEMINI-START.md` resta come fallback tecnico e riferimento, ma non è il percorso consigliato per gli studenti.
 
-## Pagina pubblica del progetto
+## Pagina pubblica e web app
 
 La pagina pubblica è:
 
 https://massimilianobanini.github.io/superosuperiori/
 
-Serve come vetrina e punto di riferimento del progetto. **Non va considerata un avvio automatico affidabile per tutte le AI.**
+È ora anche l'interfaccia di ingresso consigliata per gli studenti. Il routing 1–8 è locale e immediato; l'istruzione viene copiata e poi incollata nell'AI scelta.
 
 Lingua predefinita: **italiano**. Contesto predefinito: **scuole superiori italiane**.
