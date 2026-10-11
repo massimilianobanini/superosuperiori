@@ -119,7 +119,8 @@ La domanda importante è:
 - [PLATFORM-SUPPORT.md](PLATFORM-SUPPORT.md) — quali piattaforme sono state davvero verificate.
 - [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md) — limiti già conosciuti della versione corrente.
 - [CHANGELOG.md](CHANGELOG.md) — modifiche tra le versioni.
-- [testing/STRESS-TEST-V0.1.md](testing/STRESS-TEST-V0.1.md) — risultati dello stress test completo della V0.1.
+- [testing/STRESS-TEST-V0.4.md](testing/STRESS-TEST-V0.4.md) — stress test dell'interfaccia web e del routing V0.4.
+- [testing/STRESS-TEST-V0.1.md](testing/STRESS-TEST-V0.1.md) — storico dello stress test della V0.1.
 - [GEMINI-START.md](GEMINI-START.md) — fallback autosufficiente dedicato a Gemini.
 
 Il progetto è in fase pilota e verrà migliorato usando feedback di studenti reali.
