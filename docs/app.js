@@ -65,17 +65,107 @@
   let customText = "";
 
   function classifyText(text) {
-    const t = text.toLowerCase();
+    const t = text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[’]/g, "'")
+      .replace(/\s+/g, " ")
+      .trim();
 
-    if (/\b(sono|sei|essere|mi sento)\s+(davvero\s+)?pront[oa]\b|autovalut|auto-valut|mettimi alla prova|testami/.test(t)) return 7;
-    if (/(verifica|controlla|ricontrolla).*(chatgpt|gemini|altra ai|un['’]?altra ai|risposta (dell['’]?ai|di chatgpt|di gemini))|quello che ha detto (chatgpt|gemini|l['’]?ai)/.test(t)) return 8;
-    if (/(verifica|controlla|ricontrolla).*(esercizio|soluzione|risultato|procedimento|calcolo)/.test(t)) return 2;
-    if (/interrogaz|orale\b/.test(t)) return 4;
-    if (/verifica|compito in classe|test scolast|prova scritta/.test(t)) return 3;
-    if (/esercizi?|sono bloccato|sono bloccata|mi blocco|sblocc|continuo a sbagliare|sbaglio sempre|faccio sempre (lo stesso )?errore|problema (matematico|di matematica|di fisica|di geometria|da risolvere)/.test(t)) return 2;
-    if (/organizz|piano di studio|programma(re)? lo studio|scadenza|tempo disponibile|ho poco tempo|poco tempo|solo \d+ (minuti|min|ore)|mi restano? \d+ (minuti|min|ore|giorni)/.test(t)) return 5;
-    if (/ripass|ricord|memori|flashcard/.test(t)) return 6;
-    if (/non capisco|non ho capito|spiegami|spiegamelo|capire|non mi è chiaro|non mi e chiaro|mi annoio|è noioso|e noioso|mi annoia/.test(t)) return 1;
+    // 7 — Autovalutazione: priorità alta, perché può contenere parole come
+    // "verifica", "domande", "capito" o "test" senza essere un nuovo argomento.
+    if (
+      /\b(sono|mi sento)\s+(davvero\s+)?pront[oa]\b/.test(t) ||
+      /\b(sono|quanto sono|mi sento|vediamo se sono|fammi capire se sono)\s+preparat[oa]\b/.test(t) ||
+      /autovalut|auto-valut|mettimi alla prova|\btestami\b/.test(t) ||
+      /vedere se (so|ho capito|sono preparat|ricordo tutto)/.test(t) ||
+      /vedere cosa non so|dimmi dove sono debole|dove sono debole/.test(t) ||
+      /posso smettere di studiare|messo bene per domani/.test(t) ||
+      /fammi \d+ domande.*vedere se/.test(t) ||
+      /fai (un )?test.*vedere cosa non so/.test(t) ||
+      /simulazione.*(dove|cosa).*(debole|sbaglio|non so)/.test(t)
+    ) return 7;
+
+    // 8 — Revisione critica di un'altra AI: va distinta dalla verifica scolastica.
+    if (
+      /(verifica|controlla|ricontrolla|correggi).*(chatgpt|gemini|copilot|altra ai|un['’]?altra ai|risposta (dell['’]?ai|di chatgpt|di gemini|di copilot))/.test(t) ||
+      /quello che ha detto (chatgpt|gemini|copilot|l['’]?ai)/.test(t) ||
+      /(chatgpt|gemini|copilot).*(dice il contrario|ha ragione|sbaglia)/.test(t)
+    ) return 8;
+
+    // 8 — Approfondimento intenzionale: non confonderlo con "non capisco".
+    if (
+      /approfond|piu a fondo|andiamo.*fondo/.test(t) ||
+      /casi piu difficili|fammi vedere le eccezioni|vedere le eccezioni/.test(t) ||
+      /capire perche funziona davvero|perche funziona davvero/.test(t)
+    ) return 8;
+
+    // 2 — Controllo di un proprio esercizio / soluzione.
+    if (
+      /(verifica|controlla|ricontrolla|correggi).*(esercizio|soluzione|risultato|procedimento|calcolo)/.test(t) ||
+      /dove (ho )?sbagliat|dove sbaglio/.test(t) ||
+      /(l['’]?ho fatto|ho fatto).*(giusto|bene|corrett)/.test(t) ||
+      /risultato.*(giusto|corretto)|e giusto\??$/.test(t)
+    ) return 2;
+
+    // 6 — Richiamo/memoria quando lo studente chiede esplicitamente di essere
+    // interrogato per ripassare o ricordare, non per simulare un orale.
+    if (
+      /(interrogami|fammi.*domande).*(ricord|ripass)/.test(t) ||
+      /(ricord|ripass).*(interrogami|fammi.*domande)/.test(t)
+    ) return 6;
+
+    // 4 — Interrogazione/orale.
+    if (
+      /interrogaz|\borale\b|interrogami|mi interroghi/.test(t) ||
+      /domande come (il )?prof|fai finta.*prof.*interrog/.test(t) ||
+      /domand[ae] alla volta/.test(t)
+    ) return 4;
+
+    // 3 — Verifica/compito scritto.
+    if (
+      /\bverifica\b|compito in classe|prova scritta|test scolast/.test(t) ||
+      /\b(ho|avro|domani|lunedi|martedi|mercoledi|giovedi|venerdi).{0,25}\btest\b/.test(t) ||
+      /\btest di [a-z]/.test(t) ||
+      /\bcompito\b.*(mate|matemat|fisic|italian|ingles|storia|scienze|chimic|tedesc|frances)/.test(t) ||
+      /esercitarmi per (il|un) compito/.test(t)
+    ) return 3;
+
+    // 2 — Esercizio, blocco, errore ricorrente, richiesta di indizio.
+    if (
+      /esercizi?|sono bloccato|sono bloccata|mi blocco|sblocc/.test(t) ||
+      /continuo a sbagliare|sbaglio sempre|faccio sempre (lo stesso )?errore/.test(t) ||
+      /problema (matematico|di matematica|di fisica|di geometria|da risolvere)/.test(t) ||
+      /non so come (andare avanti|continuare)|da qui (che|cosa) faccio/.test(t) ||
+      /dammi (solo )?un indizio|non dirmi la soluzione|aiutami a trovarla/.test(t) ||
+      /come si risolve (questo|questa)|mi aiuti a fare (il|la) \d+/.test(t) ||
+      /\bcorreggi questo\b/.test(t)
+    ) return 2;
+
+    // 5 — Organizzazione e gestione del tempo.
+    if (
+      /organizz|piano di studio|programma(re)? lo studio|scadenza|tempo disponibile/.test(t) ||
+      /ho poco tempo|poco tempo|solo \d+ (minuti|min|ore)|mi restano? \d+ (minuti|min|ore|giorni)/.test(t) ||
+      /mi mancano? \d+ (giorni|ore)|ho \d+ giorni e \d+ (capitoli|argomenti)/.test(t) ||
+      /come divido lo studio|da dove iniziare a studiare tutto|troppe cose da fare/.test(t) ||
+      /dare priorita|cosa studio prima|un['’]?ora libera adesso/.test(t)
+    ) return 5;
+
+    // 6 — Memoria e ripasso.
+    if (
+      /ripass|ricord|memori|flashcard|dimentic/.test(t) ||
+      /non mi entra in testa|impararl[oa]? a memoria|imparare a memoria/.test(t)
+    ) return 6;
+
+    // 1 — Comprensione, rispiegazione, esempi, analogie, noia.
+    if (
+      /non capisco|non ho capito|non ci sto capendo|non la capisco|non lo capisco|nn capisco/.test(t) ||
+      /spiegami|spiegamelo|spieghi|rispieg|capire|non mi e chiaro/.test(t) ||
+      /che (vuol dire|significa)|fammi (un )?esempio|esempio concreto|analogia/.test(t) ||
+      /mi annoio|noia|noioso|una palla|mi annoia|rendimel[oa] interessante/.test(t) ||
+      /perche questa .* funziona/.test(t)
+    ) return 1;
 
     return 8;
   }
