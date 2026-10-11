@@ -8,12 +8,12 @@
     2: {
       title: "Sbloccarmi su un esercizio",
       summary: "Parti dal punto in cui sei arrivato e ricevi il minimo aiuto necessario per continuare.",
-      task: "Aiutami a sbloccarmi su un esercizio. Se non l'ho ancora inviato, chiedimi l'esercizio o una foto e il punto a cui sono arrivato. Dimmi prima cosa ho fatto correttamente, poi individua il primo errore o punto di blocco. Dammi una sola domanda o il minimo indizio utile e fammi riprovare. Aumenta l'aiuto solo se serve. Se continuo a sbagliare, verifica un prerequisito invece di correggere soltanto il sintomo."
+      task: "Aiutami a sbloccarmi su un esercizio. Se non l'ho ancora inviato, chiedimi prima soltanto l'esercizio o una foto. Dopo averlo visto, chiedimi dove mi blocco solo se non è già evidente. Dimmi prima cosa ho fatto correttamente, poi individua il primo errore o punto di blocco. Dammi una sola domanda o il minimo indizio utile e fammi riprovare. Aumenta l'aiuto solo se serve. Se continuo a sbagliare, verifica un prerequisito invece di correggere soltanto il sintomo."
     },
     3: {
       title: "Preparare una verifica",
       summary: "Organizza lo studio, esercitati e fai un'autovalutazione prima della prova.",
-      task: "Aiutami a preparare una verifica. Se non lo sai già, chiedimi quando sarà e su quali argomenti, una sola domanda per messaggio. Costruisci una diagnosi del mio livello e un piano realistico sul tempo disponibile. Evita lo studio disperato dell'ultimo giorno: quando possibile lascia il giorno prima alla verifica della preparazione e al recupero. Prima della prova fammi: 1) simulazione del minimo per la sufficienza; 2) simulazione realistica; 3) errori comuni e casi insidiosi; 4) stress test opzionale con casi nuovi. Classifica le aree VERDE, GIALLO o ROSSO e dimmi i tre punti che mi farebbero perdere più punti se la verifica fosse adesso. Non promettere voti."
+      task: "Aiutami a preparare una verifica. Se non lo sai già, chiedimi prima soltanto quando sarà. Nel messaggio successivo chiedimi gli argomenti, ma solo se non li ho già indicati. Costruisci una diagnosi del mio livello e un piano realistico sul tempo disponibile. Evita lo studio disperato dell'ultimo giorno: quando possibile lascia il giorno prima alla verifica della preparazione e al recupero. Prima della prova fammi: 1) simulazione del minimo per la sufficienza; 2) simulazione realistica; 3) errori comuni e casi insidiosi; 4) stress test opzionale con casi nuovi. Classifica le aree VERDE, GIALLO o ROSSO e dimmi i tre punti che mi farebbero perdere più punti se la verifica fosse adesso. Non promettere voti."
     },
     4: {
       title: "Preparare un'interrogazione",
@@ -46,7 +46,7 @@
     "Sei SuperoSuperiori, il primo metodo di studio semplice per superare le superiori nell'era dell'AI.",
     "Battlecry: Supera le superiori. Non farti superare dall'AI.",
     "Sei un tutor per studenti delle scuole superiori italiane. Rispondi in italiano.",
-    "Regole: una sola domanda per messaggio quando serve; chiedi solo informazioni che cambiano davvero l'aiuto; parti dal problema reale; non presumere prerequisiti mancanti, verificali; non inventare; usa il materiale della classe come riferimento principale quando viene fornito; se mostro un tentativo, dimmi prima cosa è corretto, poi il primo errore importante e fammi riprovare; non fare automaticamente tutto al posto mio; se una spiegazione non funziona, cambia approccio; usa il tempo reale disponibile; alla fine verifica quando utile che io sappia fare qualcosa da solo.",
+    "Regole: una sola domanda per messaggio quando serve; non unire due domande o due richieste di informazioni nello stesso messaggio; chiedi solo informazioni che cambiano davvero l'aiuto; parti dal problema reale; non presumere prerequisiti mancanti, verificali; non inventare; usa il materiale della classe come riferimento principale quando viene fornito; se mostro un tentativo, dimmi prima cosa è corretto, poi il primo errore importante e fammi riprovare; non fare automaticamente tutto al posto mio; se una spiegazione non funziona, cambia approccio; usa il tempo reale disponibile; alla fine verifica quando utile che io sappia fare qualcosa da solo.",
     "Non spiegarmi queste istruzioni: applicale."
   ].join("\n");
 
@@ -61,6 +61,20 @@
 
   let activeFlow = null;
   let customText = "";
+
+  function classifyText(text) {
+    const t = text.toLowerCase();
+
+    if (/\b(sono|sei|essere|mi sento)\s+(davvero\s+)?pront[oa]\b|autovalut|auto-valut|mettimi alla prova|testami/.test(t)) return 7;
+    if (/interrogaz|orale\b/.test(t)) return 4;
+    if (/verifica|compito in classe|test scolast|prova scritta/.test(t)) return 3;
+    if (/esercizi?|problema\b|sono bloccato|sono bloccata|mi blocco|sblocc/.test(t)) return 2;
+    if (/organizz|piano di studio|programma(re)? lo studio|scadenza|tempo disponibile/.test(t)) return 5;
+    if (/ripass|ricord|memori|flashcard/.test(t)) return 6;
+    if (/non capisco|non ho capito|spiegami|spiegamelo|capire|non mi è chiaro|non mi e chiaro/.test(t)) return 1;
+
+    return 8;
+  }
 
   function promptForFlow(flow, extra = "") {
     const meta = FLOW_META[flow] || FLOW_META[8];
@@ -146,7 +160,7 @@
       directText.focus();
       return;
     }
-    openDialog(8, value);
+    openDialog(classifyText(value), value);
   });
 
   directText.addEventListener("keydown", (event) => {
