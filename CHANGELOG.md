@@ -1,5 +1,37 @@
 # Changelog
 
+## V0.3 — 11 ottobre 2026
+
+### Avvio rapido
+
+- introdotto il principio **FAST PATH FIRST**;
+- la prima schermata non richiede la lettura completa del repository;
+- create 8 scelte numerate, utilizzabili anche scrivendo soltanto il numero;
+- rimosse emoticon dalla schermata iniziale per mantenere un aspetto professionale;
+- l'avviso tecnico sulle impostazioni dell'AI non blocca più l'avvio;
+- le scelte 1–7 usano routing deterministico;
+- il ragionamento approfondito parte solo quando inizia il problema reale.
+
+### Interfaccia
+
+La schermata iniziale mostra:
+- Brand Positioning;
+- Battlecry;
+- i due casi del Kit: **A — devo sbloccarmi** e **B — voglio approfondire**;
+- menu numerato 1–8.
+
+### Architettura
+
+Aggiunti:
+- `runtime/FAST-START.md`;
+- `runtime/FAST-ROUTER.md`;
+- `runtime/CORE-MIN.md`;
+- flow dedicati per capire, esercizi, verifiche, interrogazioni, organizzazione, memoria/ripasso, autovalutazione e altro;
+- `method/METODO-SUPERA.md`.
+
+Principio: **il metodo può essere ricco; l'esperienza dello studente deve restare semplice.**
+
+
 ## V0.2 — 3 ottobre 2026
 
 ### Posizionamento
