@@ -28,7 +28,9 @@ SuperoSuperiori riduce il problema mettendo le regole essenziali nel README e in
 
 ChatGPT ha già mostrato di poter avviare SuperoSuperiori partendo dal solo link, ma il comportamento con richieste concrete è stato variabile durante i primi test.
 
-Gemini e altre AI non sono ancora validate.
+Per Gemini, il **solo link GitHub non è affidabile**. La Skill dedicata `/superosuperiori` è invece stata validata sperimentalmente.
+
+La web app V0.4 riduce questo problema generando un'istruzione autosufficiente, ma il flusso completo su browser/dispositivo reale deve ancora essere validato manualmente.
 
 Vedi `PLATFORM-SUPPORT.md`.
 
@@ -69,3 +71,18 @@ Non garantiscono un risultato scolastico specifico.
 SuperoSuperiori riduce alcuni errori di utilizzo dell'AI, ma non rende l'AI infallibile.
 
 Libro, appunti, materiale del docente e fonti affidabili restano importanti per i controlli.
+
+
+## 10. La web app dipende anche dal browser
+
+Il routing locale e la generazione delle istruzioni hanno superato gli stress test tecnici.
+
+Restano però dipendenze esterne che vanno verificate su dispositivi reali:
+
+- permessi della clipboard;
+- apertura di nuove schede o finestre;
+- comportamento diverso tra browser;
+- login già effettuato o meno su ChatGPT/Gemini;
+- eventuali modifiche future agli indirizzi o alle interfacce delle piattaforme.
+
+Per questo “stress test tecnico superato” non equivale ancora a “validato su ogni dispositivo”.
