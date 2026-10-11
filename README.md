@@ -105,6 +105,7 @@ La domanda importante è:
 ## Documenti principali
 
 - [START-HERE.md](START-HERE.md) — punto di ingresso leggero.
+- [method/METODO-SUPERA.md](method/METODO-SUPERA.md) — struttura canonica del metodo di studio.
 - [runtime/FAST-START.md](runtime/FAST-START.md) — schermata iniziale e avvio rapido.
 - [runtime/FAST-ROUTER.md](runtime/FAST-ROUTER.md) — routing deterministico delle scelte 1–8.
 - [runtime/CORE-MIN.md](runtime/CORE-MIN.md) — regole minime da caricare subito.
