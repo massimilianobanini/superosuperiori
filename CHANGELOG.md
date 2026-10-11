@@ -1,5 +1,34 @@
 # Changelog
 
+## V0.4 — 11 ottobre 2026
+
+### Web app cliccabile
+
+- trasformata la pagina GitHub Pages in una vera interfaccia mobile-first;
+- 8 scelte numerate cliccabili;
+- supporto anche ai tasti 1–8 da tastiera;
+- campo libero per descrivere direttamente il problema;
+- nessuna emoticon nell'interfaccia;
+- schermata iniziale con Posizionamento, Battlecry e casi A/B del Kit;
+- metodo SUPERA visibile sotto le scelte.
+
+### Avvio dell'AI
+
+Dopo la scelta:
+- il routing è immediato e locale;
+- non viene letto tutto il repository;
+- viene costruita un'istruzione autosufficiente con Core minimo + flow specifico;
+- un pulsante copia l'istruzione e apre ChatGPT o Gemini;
+- disponibile anche la sola copia per usare un'altra AI.
+
+### Privacy tecnica
+
+La web app è statica:
+- non contiene chiavi API;
+- non richiede un backend SuperoSuperiori;
+- il testo inserito resta nel browser finché lo studente non lo incolla volontariamente nella propria AI.
+
+
 ## V0.3 — 11 ottobre 2026
 
 ### Avvio rapido
