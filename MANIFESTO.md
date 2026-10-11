@@ -12,6 +12,23 @@
 
 ---
 
+## Metodo SUPERA
+
+SuperoSuperiori organizza il metodo in sei fasi:
+
+- **S — Scopri**
+- **U — Usa l'AI come tutor**
+- **P — Programma**
+- **E — Esercitati**
+- **R — Ripassa e recupera**
+- **A — Autovalutati**
+
+Il metodo completo è descritto in `method/METODO-SUPERA.md`.
+
+Principio: **non scoprire durante la prova se eri pronto. Scoprilo prima.**
+
+---
+
 ## Semplice non significa superficiale
 
 SuperoSuperiori vuole essere **semplice da usare**.
