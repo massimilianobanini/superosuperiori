@@ -70,6 +70,20 @@
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .replace(/[’]/g, "'")
+      .replace(/\bnn\b/g, "non")
+      .replace(/\bsn\b/g, "sono")
+      .replace(/\bcm\b/g, "come")
+      .replace(/\bdv\b/g, "dove")
+      .replace(/\bnnt\b/g, "niente")
+      .replace(/\btt\b/g, "tutto")
+      .replace(/\bqlcs\b/g, "qualcosa")
+      .replace(/\bcn\b/g, "con")
+      .replace(/\bpls\b/g, "")
+      .replace(/\bx\b/g, "per")
+      .replace(/\b(\d+)\s*h\b/g, "$1 ore")
+      .replace(/\b(\d+)\s*gg\b/g, "$1 giorni")
+      .replace(/\blun\b/g, "lunedi")
+      .replace(/\bven\b/g, "venerdi")
       .replace(/\s+/g, " ")
       .trim();
 
@@ -85,7 +99,7 @@
       /vedere se (so|ho capito|sono preparat|ricordo tutto)|capire se quello che so basta/.test(t) ||
       /vedere cosa non so|trova.*cosa non so|dimmi dove sono debole|dove sono debole|che buchi ho|scova.*lacune/.test(t) ||
       /posso smettere di studiare|messo bene per domani|andare tranquill[oa] domani/.test(t) ||
-      /manca qualcosa.*posso (chiudere|smettere)/.test(t) ||
+      /manca qualcosa.*posso (chiudere|smettere)|^manca qualcosa\??$|^posso chiudere\??$/.test(t) ||
       /fammi \d+ domande.*vedere se|fammi domande.*cosa non so/.test(t) ||
       /fai (un )?test.*vedere cosa non so/.test(t) ||
       /simula(mi)? (la )?(prova|verifica|interrogazione).*(valutami|debole|preparat)/.test(t) ||
@@ -108,7 +122,7 @@
       /(l['’]?ho fatto|ho fatto).*(giusto|bene|corrett)/.test(t) ||
       /procedimento.*corrett|risultato.*(giusto|corretto)|e giusto\??$/.test(t) ||
       /ho ottenuto.*(torna|giusto|corretto)|ho impostato.*(va bene|giusto|corretto)/.test(t) ||
-      /trova (il )?primo errore|conto non torna|mi viene .* sul libro/.test(t)
+      /trova (il )?primo errore|conto non torna|mi viene .* (sul libro|ma il libro dice)/.test(t)
     ) return 2;
 
     // 6 — "Interrogami per ripassare/ricordare" è memoria, non simulazione orale.
@@ -134,7 +148,7 @@
       /domande (del |della |come (il )?)prof/.test(t) ||
       /fai finta.*prof.*interrog|finta interrogazione|(fammi|mi fai) da prof.*domande/.test(t) ||
       /domand[ae] alla volta|domande da orale/.test(t) ||
-      /(domani )?(mi )?(chiama|sente) la prof|prof mi sente/.test(t) ||
+      /(domani )?(mi )?(chiama|sente) la prof|prof mi sente|domani mi (chiama|sente)\b/.test(t) ||
       /domani mi fara domande|simula la prof/.test(t) ||
       /parlare di .* davanti alla prof|parlare davanti alla prof|rispondere a voce/.test(t) ||
       /per l['’]?interrogazione|per l['’]?orale/.test(t) ||
@@ -146,13 +160,13 @@
       new RegExp("\\b(ho|devo|avro|prepar|simul|fammi|domani|" + day.slice(3,-1) + ").{0,35}(verifica|compito|test|prova scritta)").test(t) ||
       new RegExp("(verifica|compito|test|prova scritta).{0,30}" + day).test(t) ||
       /compito in classe|test scolast/.test(t) ||
-      /\btest di (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino|grammatica|geografia|informatica)\b/.test(t) ||
+      /\btest (di )?(matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino|grammatica|geografia|informatica)\b/.test(t) ||
       /\bcompito\b.*(mate|matemat|fisic|italian|ingles|storia|scienze|chimic|tedesc|frances|latino|domani|su )/.test(t) ||
       /(prepar|esercit).*(per )?(il|un) compito/.test(t) ||
       /(cosa|che cosa).*(uscire|potrebbe uscire|puo mettere).*compito/.test(t) ||
       /voglio (il|almeno) [0-9]+.*(compito|verifica)/.test(t) ||
       /(matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino) scritto/.test(t) ||
-      /scritto di (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino)/.test(t) ||
+      /scritto di (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino)|scritto (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino)/.test(t) ||
       /prova (come quella|di (matematica|fisica|italiano|inglese|storia|scienze|chimica|tedesco|francese|latino))/.test(t) ||
       /simulazione del compito|per la verifica|per il compito|^(verifica|compito)$/.test(t)
     ) return 3;
@@ -163,9 +177,9 @@
       /piano di studio|programma(re)? lo studio|scadenza|tempo disponibile|incastr/.test(t) ||
       /ho poco tempo|poco tempo/.test(t) ||
       /\b(ho|solo|mi restano?|mi mancano?)\s+(\d+|una|un|due|tre|quattro|cinque|sei|sette|otto)\s+(minuti|min|ore|giorni)\b/.test(t) ||
-      /ho \d+ giorni e \d+ (capitoli|argomenti)/.test(t) ||
+      /(ho )?\d+ giorni e \d+ (capitoli|argomenti)/.test(t) ||
       /come divido lo studio|da dove iniziare a studiare tutto|troppe cose da fare|pieno di compiti/.test(t) ||
-      /dare priorita|cosa studio prima|da cosa parto oggi/.test(t) ||
+      /dare priorita|cosa studio prima|cosa faccio prima|da cosa parto oggi|sono pieno di roba/.test(t) ||
       /scaletta.*(giorni|settimana)|entro (lunedi|martedi|mercoledi|giovedi|venerdi|sabato|domenica)/.test(t) ||
       /questa settimana.*(compiti|materie|studiare)/.test(t)
     ) return 5;
@@ -189,20 +203,20 @@
 
     // 2 — Esercizio, blocco, errore ricorrente, richiesta di indizio.
     if (
-      /\besercizi?\b|sono bloccato|sono bloccata|mi blocco|sblocc|sono fermo qui|sono inchiodato qui/.test(t) ||
+      /\besercizi(?:o)?\b|sono bloccato|sono bloccata|mi blocco|sblocc|sono fermo qui|sono inchiodato qui/.test(t) ||
       /continuo a sbagliare|sbaglio sempre|faccio sempre (lo stesso )?errore|viene sempre sbagliat|incasino sempre.*segni/.test(t) ||
       /problema (matematico|di matematica|di fisica|di geometria|da risolvere)/.test(t) ||
       /non so come (andare avanti|continuare)|da qui (che|cosa) faccio|passaggio viene dopo|prossimo passaggio/.test(t) ||
-      /dammi (solo )?un indizio|senza risolverlo tu|senza farmelo tu|non dirmi la soluzione|aiutami a trovarla/.test(t) ||
+      /dammi (solo )?(un|1) indizio|senza risolverlo tu|senza farmelo tu|non dirmi la soluzione|aiutami a trovarla/.test(t) ||
       /come si risolve (questo|questa)|mi aiuti a fare (il|la) \d+|aiutami (col|con il) (numero )?\d+/.test(t) ||
-      /non riesco a (finire|chiudere) (il|la|l['’]?)? ?(numero )?\d*|non riesco a chiuderlo/.test(t) ||
+      /non riesco a (finire|finirlo|chiudere) (il|la|l['’]?)? ?(numero )?\d*|non riesco a (chiuderlo|finirlo)/.test(t) ||
       /\bcorreggi questo\b/.test(t)
     ) return 2;
 
     // 6 — Memoria e ripasso: segnali operativi, non la parola "memoria" come concetto.
     if (
       /ripass|ricord|memorizz|dimentic|scord/.test(t) ||
-      /(crea(mi)?|fammi|trasforma.*in|preparami).{0,20}flashcard|flashcard per/.test(t) ||
+      /(crea(mi)?|fammi|trasforma.*in|preparami).{0,20}flashcard|flashcard (per|vocab)/.test(t) ||
       /non mi entra in testa|ficco in testa|fissarl[oa]? in testa|fissarlo in testa/.test(t) ||
       /impararl[oa]? a memoria|imparare a memoria/.test(t) ||
       /letto .* volte.*non resta|non (mi )?resta (niente|nulla|in testa)|richiamo attivo/.test(t) ||
