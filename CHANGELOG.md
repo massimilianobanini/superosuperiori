@@ -2,6 +2,17 @@
 
 ## V0.4 — 11 ottobre 2026
 
+### Perimetro e limiti
+
+- aggiunta `COSA-PUO-E-NON-PUO-FARE.md`, pagina pubblica per studenti, famiglie, docenti e scuole;
+- chiarito che SuperoSuperiori non garantisce voti, non sostituisce il docente e non certifica la preparazione;
+- chiarito il significato di VERDE / GIALLO / ROSSO;
+- esplicitato che non diagnostica DSA, difficoltà cognitive o condizioni mediche;
+- aggiunto il collegamento dalla web app pubblica;
+- ripulito `PLATFORM-SUPPORT.md` eliminando indicazioni storiche ormai superate.
+
+
+
 ### Web app cliccabile
 
 - trasformata la pagina GitHub Pages in una vera interfaccia mobile-first;
