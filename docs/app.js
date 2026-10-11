@@ -174,7 +174,7 @@
     if (
       /^(che )?cos['’]?e\b|^cosa sono\b|^che cosa (vuol dire|significa)\b|^cosa (vuol dire|significa)\b/.test(t) ||
       /^qual e il compito (del|della|dei|delle|di)\b/.test(t) ||
-      /^come funziona\b|^come si calcola\b|^perche si parla di\b/.test(t) ||
+      /^come funziona\b|^come si calcola\b|^come si organizza (una|un|la|il|lo|l['’])\b|^perche si parla di\b/.test(t) ||
       /^spiegami (l['’]|la |il |lo |le |i |gli |un |una |come |cosa |perche )/.test(t)
     ) return 1;
 
