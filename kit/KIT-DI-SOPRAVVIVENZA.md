@@ -1,27 +1,44 @@
 # Kit di sopravvivenza scolastica con AI per studenti delle scuole superiori
 
-**Massimiliano Banini — V1.7 — 30 settembre 2026**
+**Massimiliano Banini — V1.8 — 19 ottobre 2026**
 
 > Questa è la versione Markdown del Kit, pensata anche per essere letta direttamente dalle AI.
 > Per usare SuperoSuperiori non devi leggere tutto: incolla semplicemente il link del repository nella tua AI.
 
-## START HERE
+## START HERE — hai solo 30 secondi?
 
-Non hai tempo o voglia di leggere tutto?
+**Non devi leggere tutto il Kit. Scegli come partire:**
 
-- Se stai usando SuperoSuperiori, incolla nella tua AI: `https://github.com/massimilianobanini/superosuperiori`.
-- Se stai usando soltanto il PDF, caricalo nella chat e scrivi: **Aiutami**.
-- Prima di caricare foto o documenti, rimuovi nomi e altri dati personali o sensibili. Non caricare registri, certificati, diagnosi o documenti scolastici riservati.
+1. **SuperoSuperiori (consigliato):** apri https://massimilianobanini.github.io/superosuperiori/ , scegli cosa ti serve, copia l'istruzione e incollala in ChatGPT o Gemini.
+2. **Hai il PDF?** Caricalo nell'AI e scrivi **«Aiutami»**. Chiedi che parta dal tuo problema e ti guidi un passo alla volta.
+3. **Skill Gemini `/superosuperiori`:** percorso dedicato **solo per maggiorenni (18+)**, quando disponibile e attivato nell'account. Non è un ingresso per i minorenni.
 
-### Comando consigliato per il PDF
+**Ultima versione pubblica del Kit:** https://github.com/massimilianobanini/superosuperiori/tree/main/kit
 
-> Usa questo PDF come guida. Prima fammi da 3 a 5 domande, una alla volta, per capire quale materia o argomento sto affrontando, cosa devo ottenere, dove mi blocco, cosa ho già provato e quanto tempo ho. Non dare per scontato che la mia prima domanda sia quella giusta. Poi indicami solo le 2 o 3 parti di questo PDF più utili per il mio problema e guidami una cosa alla volta. Non darmi subito la soluzione completa.
+Prima di caricare foto o documenti, rimuovi dati personali e sensibili. Le condizioni di età e le funzioni delle AI possono cambiare: controlla le regole aggiornate del servizio e della scuola.
 
-Perché funziona:
+## Hai già un metodo di studio. Quanto funziona?
 
-- non devi sapere già qual è la domanda perfetta;
-- non devi leggere tutto il Kit ogni volta;
-- puoi migliorare per tentativi e chiedere un controllo o una spiegazione diversa.
+**Metodo dell'emergenza:** arrivo al pomeriggio prima della verifica e provo a salvare il salvabile.
+
+**Metodo della delega:** chiedo all'AI «fammi questo esercizio come lo farebbe uno studente di quarta», copio e consegno, ma non so rifarlo.
+
+**Metodo progettato:** capisco l'obiettivo, individuo cosa mi manca, mi esercito, correggo e verifico se sono pronto. Non è una questione di essere studenti pigri o bravi: sono strategie che si possono migliorare.
+
+### Il metodo SUPERA
+
+- **S — Scopri:** chiarisci problema, obiettivo e lacune.
+- **U — Usa l'AI come tutor:** fatti guidare, non sostituire.
+- **P — Programma:** usa il tempo reale che hai.
+- **E — Esercitati:** prova tu, anche su casi nuovi.
+- **R — Ripassa e recupera:** affronta gli errori e i prerequisiti mancanti.
+- **A — Autovalutati:** scopri prima della prova se sei pronto.
+
+**Non scoprire durante la prova se eri pronto. Scoprilo prima.**
+
+Questo metodo nasce per le superiori, ma imparare a fare domande migliori, scomporre problemi e verificare risultati serve anche all'università e sul lavoro.
+
+**Domanda finale:** «Dopo questo aiuto so fare qualcosa che prima non sapevo fare?»
 
 ---
 
