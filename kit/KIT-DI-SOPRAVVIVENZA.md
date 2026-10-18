@@ -81,9 +81,9 @@ Questo metodo nasce per le superiori, ma imparare a fare domande migliori, scomp
 
 Per una scuola superiore italiana conta soprattutto l'età reale, non soltanto la classe.
 
-**Questa tabella è una fotografia della V1.7 del 30 settembre 2026, non una regola permanente.** Requisiti di età, piani, funzioni e disponibilità possono cambiare e possono dipendere dal paese o dal tipo di account. Se devi decidere cosa puoi usare oggi, controlla sempre le pagine ufficiali aggiornate del servizio e le regole della tua scuola.
+**Questa tabella è una fotografia della V1.8 del 19 ottobre 2026, non una regola permanente.** Requisiti di età, piani, funzioni e disponibilità possono cambiare e possono dipendere dal paese o dal tipo di account. Se devi decidere cosa puoi usare oggi, controlla sempre le pagine ufficiali aggiornate del servizio e le regole della tua scuola.
 
-Indicazione riportata nella V1.7:
+Indicazione riportata nella V1.8:
 
 | Età | Classe tipica | ChatGPT | Gemini | NotebookLM | Google AI Mode | Copilot | Claude |
 |---|---|---|---|---|---|---|---|
@@ -346,7 +346,7 @@ Scorciatoie:
 
 Non affezionarti troppo al marchio: impara il metodo e poi usa lo strumento compatibile con la tua età, il tuo account e le regole della scuola.
 
-La V1.7 cita:
+La V1.8 cita:
 
 - ChatGPT;
 - Gemini;
